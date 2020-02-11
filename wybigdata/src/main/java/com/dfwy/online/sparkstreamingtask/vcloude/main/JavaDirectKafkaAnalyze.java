@@ -1,0 +1,159 @@
+package com.dfwy.online.sparkstreamingtask.vcloude.main;
+
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.dfwy.online.sparkstreamingtask.business.basics.IdeQuotasBusiService;
+import com.dfwy.online.sparkstreamingtask.business.basics.IdeQuotasBusiServiceImpl;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.etlclean.AmarsoftETLInsertData;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.etlclean.CCXETLInsertData;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.etlclean.ElementsCreditETLInsertData;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.hbase.HBaseOperater;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.json.JsonAnalysis;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.json.JsonSplice;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.sfanalysis.JudgeAnalysisTask;
+import common.pojo.applicantinformation.ApplicantInformationTO;
+import common.pojo.quotas.QuotasDataValueEntity;
+import common.utils.exception.ErrorCodeIDE;
+import common.utils.exception.ServiceException;
+import common.utils.http.HttpRequestUtil;
+import common.utils.stringutils.StringUtils;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.spark.SparkConf;
+import org.apache.spark.streaming.Durations;
+import org.apache.spark.streaming.api.java.JavaDStream;
+import org.apache.spark.streaming.api.java.JavaInputDStream;
+import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import org.apache.spark.streaming.kafka010.*;
+
+import java.util.*;
+
+
+
+import java.util.Collection;
+
+import static common.constant.Constants.*;
+
+/**
+ * 在auto.offset.reset标志位为earliest/或者latest，
+ * 上面的消费者都将在enable.auto.commit的基础之上进行继续消费（如果enable.auto.commit=TRUE，
+ * 则同一个消费者重启之后不会重复消费之前消费过的消息；
+ * enable.auto.commit=FALSE，则消费者重启之后会消费到相同的消息）
+ * <p>
+ * 原来这是对新的消费者而言（什么是新的消费者？比如说修改了上面消费者的GROUP_ID标识位）
+ * 在auto.offset.reset=earliest情况下，新的消费者（消费者二）将会从头开始消费Topic下的消息
+ * 在auto.offset.reset=latest情况下，新的消费者将会从其他消费者最后消费的offset处（offset=40开始）开始消费Topic下的消息
+ */
+public class JavaDirectKafkaAnalyze {
+
+    public static void main(String[] args) throws Exception {
+        //SparkConf的配置信息
+        SparkConf conf = new SparkConf().setAppName(Dfwybank_VCloude_SparkStreaming_BJAppName);
+        //SparkConf conf = new SparkConf().setAppName(Dfwybank_VCloude_SparkStreaming_BJAppName).setMaster("local[6]");
+        JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(5));
+        //Kafka的配置信息
+        Map<String, Object> kafkaParams = new HashMap<>();
+        kafkaParams.put("bootstrap.servers", Dfwybank_VCloude_Kafka_Bootstrap_Servers);
+        kafkaParams.put("key.deserializer", StringDeserializer.class);
+        kafkaParams.put("value.deserializer", StringDeserializer.class);
+        //最新kafka消费者，必须要有group.id,不再能为空。
+        kafkaParams.put("group.id", "StoreData4");
+        //auto.offset.reset针对于对新的消费者而言，
+        //是从头消费还是从从其他消费者最后消费的offset处开始消费
+        kafkaParams.put("auto.offset.reset", "latest");//latest  earliest
+        kafkaParams.put("enable.auto.commit", false);
+        Collection<String> topics = Dfwybank_VCloude_SparkStreaming_Kafka_Consumer_Topics;
+        //Collection<String> topics = Arrays.asList("test_perf");
+        //Collection<String> topics = Arrays.asList("Dfwybank_VCloude_BusinessJustice_JSON_Topic_1");
+        JavaInputDStream<ConsumerRecord<String, String>> stream = KafkaUtils.createDirectStream(
+                jssc,
+                LocationStrategies.PreferConsistent(),
+                ConsumerStrategies.<String, String>Subscribe(topics, kafkaParams)
+        );
+        //获取KV键值对中的V值，因为K值是null是不需要的
+        JavaDStream<String> javaDStream = stream.map(record -> record.value());
+        //进行数据的处理！
+        javaDStream.foreachRDD(rdd -> {
+
+            rdd.foreach(record -> {
+                //数据的解析和HBase储存
+                    Boolean result=true;
+                try {
+                    Object obj= JSON.parse(record);
+                    result = true;
+                } catch (Exception e) {
+                    result=false;
+                    throw new ServiceException(ErrorCodeIDE.VCloudeSpark.Date_Source_From + "：数据来源数据非Json格式！");
+                }
+                if (StringUtils.isNotEmpty(record)&&result) {
+                    System.out.println(record.substring(1, 10));
+                    //1、将传输过来的报文数据封装进申请人实例中，做数据的传输！
+                    ApplicantInformationTO applicantInformationTO = JsonAnalysis.json2Object(record);
+                    //2、原始报文的数据清洗入库工作
+                    if (StringUtils.isNotEmpty(applicantInformationTO.getAmarsoftData())) {
+                        AmarsoftETLInsertData.etlClean(applicantInformationTO);
+                    } else if (StringUtils.isNotEmpty(applicantInformationTO.getElementscreditData())) {
+                        ElementsCreditETLInsertData.etlClean(applicantInformationTO);
+                    } else if (StringUtils.isNotEmpty(applicantInformationTO.getCcxData())) {
+                        CCXETLInsertData.etlClean(applicantInformationTO);
+                    } else {
+                        throw new ServiceException(ErrorCodeIDE.VCloudeSpark.Date_Source_From + "：数据来源数据为空！");
+                    }
+                   //3、司法解析
+                    //JudgeAnalysisTask.judgeParseData();
+                    //4、指标计算接口
+                    IdeQuotasBusiService ideQuotasBusiService = new IdeQuotasBusiServiceImpl();
+                    //4.1指标计算值对象集合获得
+                    Vector<QuotasDataValueEntity> dataValueList = ideQuotasBusiService.execQuotas(applicantInformationTO, "A", "1");
+                    //4.2拼接发送计算结果数据Json
+                    String jsonStr = JsonSplice.getJsonStr(dataValueList);
+                    System.out.println("jsonStr:"+jsonStr);
+                    //5、报文和计算结果存入HBase数据库 applicantInformationTO  dataValueList
+                   HBaseOperater.data2HBase(record, applicantInformationTO, jsonStr);
+                    System.out.println("执行到程序的最后了！");
+                    //6、Http请求的发送
+                    /*try {
+                        int i = 0;
+                        while (i < 3) {
+                            String post = HttpRequestUtil.post(Dfwybank_VCloude_Http_Kafka_Consumer_Url, jsonStr);
+                            System.out.println(post);
+                            i++;
+                            JSONObject jsonObject = JSONObject.parseObject(post);
+                            if ("1".equals(jsonObject.getString("code"))) {
+                                i = 4;
+                                System.out.println("http请求数据发送成功！！！");
+                            }
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        *//*throw new ServiceException(ErrorCodeIDE.VCloudeSpark.Http_SendData_ERROR
+                                +"：Http发送数据异常！"
+                                +System.getProperty("line.separator")
+                                ,e);*//*
+                    }*/
+                    /*Integer code = 0;
+                    String msg = SendDataToKafka.sendMessage(jsonStr);
+                    JSONObject jsonObject = JSONObject.parseObject(msg);
+                    code = jsonObject.getInteger("code");
+                    if (!(code == 0)) {
+                        throw new ServiceException(ErrorCodeIDE.VCloudeSpark.Spark_Kafka_Producer_Send_ERROR + "：Kafka生产者发送失败！");
+                    }*/
+                }
+            });
+        });
+
+        stream.foreachRDD(rdd -> {
+            OffsetRange[] offsetRanges = ((HasOffsetRanges) rdd.rdd()).offsetRanges();
+            // some time later, after outputs have completed
+            ((CanCommitOffsets) stream.inputDStream()).commitAsync(offsetRanges);
+        });
+        jssc.start();
+        jssc.awaitTermination();
+    }
+}
+
+
+
+
+

@@ -1,0 +1,2137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ff14b1d9-44d9-49a0-bd3b-9ad07c648ecb" name="2018.12.23" comment="司法解析">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/hbase" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/quotas" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/JsonParse/R1103$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/business/basics/IdeQuotasBusiServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/business/basics/IdeQuotasBusiServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/SendHttpMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/SendHttpMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudgeAnalysisTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudgeAnalysisTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudicialAnalysisImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudicialAnalysisImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/common/utils/exception/ErrorCodeIDE.java" afterPath="$PROJECT_DIR$/src/main/java/common/utils/exception/ErrorCodeIDE.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/JsonParse/R1103.java" afterPath="$PROJECT_DIR$/src/test/java/JsonParse/R1103.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/test/JudgeAnynasisTest.java" afterPath="$PROJECT_DIR$/src/test/java/test/JudgeAnynasisTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/test/YSAnynasisTest.java" afterPath="$PROJECT_DIR$/src/test/java/test/YSAnynasisTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/HBaseOperater.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/hbase/HBaseOperater.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/JsonAnalysis.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/json/JsonAnalysis.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/JsonSplice.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/json/JsonSplice.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/KafkaConsumer.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/KafkaConsumer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/QuotasTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/quotas/QuotasTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/SendDataToKafka.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/SendDataToKafka.java" />
+    </list>
+    <list readonly="true" id="c8558950-9e09-4fb5-b249-42bdf00091e1" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CommittedChangesCache">
+    <option name="refreshEnabled" value="true" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/wybigdata$R1103_beanTest.coverage" NAME="R1103.beanTest Coverage Results" MODIFIED="1543906422973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>JsonParse.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JavaDirectKafkaAnalyze.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="90" column="35" lean-forward="true" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="mapper" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>15</find>
+      <find>8</find>
+      <find>GUAINFO</find>
+      <find>deleteZero</find>
+      <find>deleteSpecialCharacters</find>
+      <find>amountDeleteComma</find>
+      <find>creditCode</find>
+      <find>setPenam</find>
+      <find>fili</find>
+      <find>liquidation</find>
+      <find>SUBCONAM</find>
+      <find>impawn</find>
+      <find>sharesfrost</find>
+      <find>brregno</find>
+      <find>uid</find>
+      <find>m.uuid</find>
+      <find>setUuid</find>
+      <find>LegalIndUnexecuted</find>
+      <find>Datasource</find>
+      <find>dataSourceFrom</find>
+      <find>dataSourceFrom)</find>
+      <find>PDATE</find>
+      <find>pdate</find>
+      <find>Casedate</find>
+      <find>deletePercentSign</find>
+      <find>quan</find>
+      <find>ccxE</find>
+      <find>etlCleanStdLegalDataStructured</find>
+      <find>&quot;ccxData&quot;</find>
+      <find>columnFamily</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>:</replace>
+      <replace>double</replace>
+      <replace>uuid</replace>
+      <replace>ID</replace>
+      <replace>ID;</replace>
+      <replace>sID</replace>
+      <replace>qID</replace>
+      <replace>DateFormatCleaning</replace>
+      <replace>uID</replace>
+      <replace>m.uuID</replace>
+      <replace>setUuID</replace>
+      <replace>datasourcefrom</replace>
+      <replace>Datasourcefrom</replace>
+      <replace>dataSourceFrom</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\JavaSupport\Vcloude\wybigdata</dir>
+      <dir>D:\JavaSupport\Vcloude\wybigdata\src\main\java</dir>
+    </dirStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntPersonList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntRyposlrList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntRyposperList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntRyposshaList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/ETLCleanWriteDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntBasicList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntCaseInfoList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntFiliationList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntInvitemList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntLiquidationList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntLrinvList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntLrpositionList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntMorDetailList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntShareHolderList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntSharesfrostList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntSharesImpawnList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdLegalDataStructured.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdLegalEnterpriseExecuted.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdLegalEntUnexecuted.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdLegalIndividualExecuted.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdLegalIndUnexecuted.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/ETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/constant/Constants.java" />
+        <option value="$PROJECT_DIR$/src/test/java/JsonParse/YSAnynasisTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/numberTest/numberTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/stringutils/StringUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/etlclean/EtlCleanRules.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/ElementsCreditETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/applicantinformation/ApplicantInformationTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/HBaseOperater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/AmarsoftETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/test/java/JsonParse/R1103.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/CCXETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisReadDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/commonutil/CommonUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/YSAnynasisTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisReadDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/sfanalysisutils/CommonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/ElementsCreditETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/legalbean/LegalDataAdded.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisWriteDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/exception/ErrorCodeIDE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudgeAnalysisTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudicialAnalysisImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/JudgeAnynasisTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/hbase/HBaseOperater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/KafkaConsumer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/json/JsonSplice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/SendDataToKafka.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/quotas/QuotasTask.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Java/apache-maven-3.2.1" />
+        <option name="userSettingsFile" value="D:\Java\apache-maven-3.2.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wybigdata" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wybigdata" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1374" />
+    <option name="height" value="776" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Data flow issuesJava</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="basics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="calculation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="jsondemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="vcloude" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="vcloude" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="vcloude" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dfwy" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkstreamingtask" type="462c0819:PsiDirectoryNode" />
+              <item name="vcloude" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
+              <item name="etlclean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="public" />
+    <property name="last_opened_file_path" value="D:/Java/workspace/逆向工程/generatorSqlmapCustom" />
+    <property name="settings.editor.splitter.proportion" value="0.23789649" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\test\java" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\common\utils" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\common\utils\commonutil" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\com\dfwy\online\sparkstreamingtask\vcloude\task" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\common\pojo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="common.pojo.etlstandardtable" />
+      <recent name="com.dfwy.online.sparkstreamingtask.dao" />
+      <recent name="Producer" />
+      <recent name="mybatis" />
+      <recent name="common.utils.uuid" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\java\com\dfwy\online\sparkstreamingtask\dao" />
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\java\com\dfwy\online\sparkstreamingtask\UserMapper.xml" />
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\resources" />
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\resources\mapper" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <PATH vcs="svn" revision="677">D:\JavaSupport\Vcloude\CheckOut\wybigdata\target\test-classes\JsonParse\R1103$1.class</PATH>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.JudgeAnynasisTest">
+    <configuration name="EtlCleanRules" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="common.utils.etlclean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="common.utils.etlclean.EtlCleanRules" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <configuration name="JudgeAnynasisTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="test.JudgeAnynasisTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <configuration name="R1103.aVoidSrring" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="wybigdata" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="JsonParse" />
+      <option name="MAIN_CLASS_NAME" value="JsonParse.R1103" />
+      <option name="METHOD_NAME" value="aVoidSrring" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="R1103.cxxVoidString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="wybigdata" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="JsonParse" />
+      <option name="MAIN_CLASS_NAME" value="JsonParse.R1103" />
+      <option name="METHOD_NAME" value="cxxVoidString" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="R1103.elementsVoidString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="wybigdata" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="JsonParse" />
+      <option name="MAIN_CLASS_NAME" value="JsonParse.R1103" />
+      <option name="METHOD_NAME" value="elementsVoidString" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="numberTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="numberTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="numberTest.numberTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Application.EtlCleanRules" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.R1103.aVoidSrring" />
+      <item index="2" class="java.lang.String" itemvalue="Application.numberTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.R1103.cxxVoidString" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.R1103.elementsVoidString" />
+      <item index="5" class="java.lang.String" itemvalue="Application.JudgeAnynasisTest" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.JudgeAnynasisTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.R1103.cxxVoidString" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.R1103.elementsVoidString" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.R1103.aVoidSrring" />
+        <item index="4" class="java.lang.String" itemvalue="Application.numberTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" myAutoUpdateAfterCommit="true" cleanupOnStartRun="true">
+    <configuration useDefault="false">C:\Users\User\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+    <option name="runUnderTerminal" value="true" />
+    <option name="UPDATE_DEPTH" value="infinity" />
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+          <option name="myCopyRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata\.idea" />
+          <option name="myCopyRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata\.idea" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+          <option name="myCopyRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <changelist id="c8558950-9e09-4fb5-b249-42bdf00091e1" name="Default" comment="" />
+      <created>1543286557123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545009631618</updated>
+      <workItem from="1543286560129" duration="16334000" />
+      <workItem from="1543328939768" duration="2660000" />
+      <workItem from="1543366664863" duration="27915000" />
+      <workItem from="1543415350013" duration="105000" />
+      <workItem from="1543453969701" duration="27742000" />
+      <workItem from="1543538471297" duration="14548000" />
+      <workItem from="1543720124770" duration="30000" />
+      <workItem from="1543725916411" duration="494000" />
+      <workItem from="1543743788093" duration="2681000" />
+      <workItem from="1543746533633" duration="8252000" />
+      <workItem from="1543762227136" duration="2340000" />
+      <workItem from="1543798208361" duration="18645000" />
+      <workItem from="1543885063079" duration="17562000" />
+      <workItem from="1543915839548" duration="6758000" />
+      <workItem from="1543933518260" duration="916000" />
+      <workItem from="1543971133833" duration="28487000" />
+      <workItem from="1544057644846" duration="24266000" />
+      <workItem from="1544150860943" duration="18948000" />
+      <workItem from="1544274585652" duration="1490000" />
+      <workItem from="1544319687512" duration="6585000" />
+      <workItem from="1544356141691" duration="5033000" />
+      <workItem from="1544404853368" duration="22917000" />
+      <workItem from="1544489326034" duration="28866000" />
+      <workItem from="1544578023904" duration="28012000" />
+      <workItem from="1544662679709" duration="12299000" />
+      <workItem from="1544680715538" duration="15088000" />
+      <workItem from="1544702893630" duration="4159000" />
+      <workItem from="1544748935853" duration="16435000" />
+      <workItem from="1544834831333" duration="2466000" />
+      <workItem from="1544930274482" duration="5489000" />
+      <workItem from="1544952478899" duration="3635000" />
+      <workItem from="1544969762913" duration="652000" />
+      <workItem from="1545007891742" duration="1738000" />
+    </task>
+    <task id="LOCAL-00015" summary="Json报文解析入库DEMO的编写">
+      <created>1544765581645</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1544765581645</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Json报文解析入库DEMO的编写">
+      <created>1544765609915</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1544765609915</updated>
+    </task>
+    <task id="LOCAL-00017" summary="数据清洗规则方法的编写和一些utils的类">
+      <created>1545009531038</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1545009531039</updated>
+    </task>
+    <task id="LOCAL-00018" summary="2018.12.13">
+      <created>1545009580125</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1545009580125</updated>
+    </task>
+    <task id="LOCAL-00019" summary="数据清洗规则方法的编写和一些utils的类">
+      <created>1545009599319</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1545009599319</updated>
+    </task>
+    <task active="true" id="LOCAL-00020" summary="2018.12.17">
+      <changelist id="ff14b1d9-44d9-49a0-bd3b-9ad07c648ecb" name="2018.12.17" comment="安硕json" />
+      <created>1545009631603</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1545009631814</updated>
+      <workItem from="1545009632139" duration="29744000" />
+      <workItem from="1545057280946" duration="3018000" />
+      <workItem from="1545094517208" duration="38270000" />
+      <workItem from="1545144743606" duration="2063000" />
+      <workItem from="1545183992706" duration="32417000" />
+      <workItem from="1545224148022" duration="756000" />
+      <workItem from="1545225129740" duration="632000" />
+      <workItem from="1545267532646" duration="34623000" />
+      <workItem from="1545358524847" duration="22161000" />
+      <workItem from="1545442704050" duration="27708000" />
+      <workItem from="1545566430566" duration="7018000" />
+      <workItem from="1545613196570" duration="18709000" />
+    </task>
+    <task id="LOCAL-00021" summary="安硕json">
+      <created>1545009905810</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1545009905810</updated>
+    </task>
+    <task id="LOCAL-00022" summary="安硕json">
+      <created>1545009939457</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1545009939457</updated>
+    </task>
+    <task id="LOCAL-00023" summary="删除jsondemo和todo注解">
+      <created>1545011532036</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1545011532036</updated>
+    </task>
+    <task id="LOCAL-00024" summary="删除jsondemo和todo注解">
+      <created>1545011553064</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1545011553064</updated>
+    </task>
+    <task id="LOCAL-00025" summary="调整程序结构">
+      <created>1545024904366</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1545024904366</updated>
+    </task>
+    <task id="LOCAL-00026" summary="调整数据结构下的遗留问题">
+      <created>1545024968312</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1545024968312</updated>
+    </task>
+    <task id="LOCAL-00027" summary="报文到mysql数据库想对应的标准表！">
+      <created>1545047133482</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1545047133482</updated>
+    </task>
+    <task id="LOCAL-00028" summary="R1103接口报文所对应的标准表对象">
+      <created>1545199858411</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1545199858411</updated>
+    </task>
+    <task id="LOCAL-00029" summary="报文到mysql数据库想对应的标准表！">
+      <created>1545223210076</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1545223210076</updated>
+    </task>
+    <task id="LOCAL-00030" summary="报文到mysql数据库想对应的标准表！">
+      <created>1545223230728</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1545223230728</updated>
+    </task>
+    <task id="LOCAL-00031" summary="2018.12.17">
+      <created>1545269928183</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1545269928184</updated>
+    </task>
+    <task id="LOCAL-00032" summary="修改成员变量位置">
+      <created>1545273943146</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1545273943146</updated>
+    </task>
+    <task id="LOCAL-00033" summary="清洗规则">
+      <created>1545300692428</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1545300692428</updated>
+    </task>
+    <task id="LOCAL-00034" summary="2018.12.17">
+      <created>1545300715622</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1545300715622</updated>
+    </task>
+    <task id="LOCAL-00035" summary="2018.12.17">
+      <created>1545313872217</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1545313872217</updated>
+    </task>
+    <task id="LOCAL-00036" summary="将uuid转换成uuID">
+      <created>1545360083591</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1545360083591</updated>
+    </task>
+    <task id="LOCAL-00037" summary="uuid--&gt;uuID">
+      <created>1545360443567</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1545360443567</updated>
+    </task>
+    <task id="LOCAL-00038" summary="合并王飞马八个标准表接口、XML和对象文件等！">
+      <created>1545365431465</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1545365431465</updated>
+    </task>
+    <task id="LOCAL-00039" summary="std_legal_ind_unexecute_list表类对象成员变量为小写">
+      <created>1545379954520</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1545379954520</updated>
+    </task>
+    <task id="LOCAL-00040" summary="2018.12.17">
+      <created>1545392980293</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1545392980293</updated>
+    </task>
+    <task id="LOCAL-00041" summary="2018.12.17">
+      <created>1545394204921</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1545394204921</updated>
+    </task>
+    <task id="LOCAL-00042" summary="2018.12.17">
+      <created>1545394723614</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1545394723614</updated>
+    </task>
+    <task id="LOCAL-00043" summary="R227、R228、R229、R230、R231报文格式有变化，形成了jsonArray模式，所有，我在这里更改了入库程序">
+      <created>1545395149032</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1545395149032</updated>
+    </task>
+    <task id="LOCAL-00044" summary="测试R227程序">
+      <created>1545395291990</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1545395291990</updated>
+    </task>
+    <task id="LOCAL-00045" summary="数据库部分字段数据编程了Datetime  所以，对象要改成Date">
+      <created>1545473124518</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1545473124518</updated>
+    </task>
+    <task id="LOCAL-00046" summary="添加了数据来源成员变量">
+      <created>1545473156133</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1545473156133</updated>
+    </task>
+    <task id="LOCAL-00047" summary="添加数据来源程序">
+      <created>1545475839474</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1545475839474</updated>
+    </task>
+    <task id="LOCAL-00048" summary="2018.12.17">
+      <created>1545484046820</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1545484046820</updated>
+    </task>
+    <task id="LOCAL-00049" summary="添加了元素、中诚信、安硕数据分别存入HBASE">
+      <created>1545485936318</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1545485936318</updated>
+    </task>
+    <task id="LOCAL-00050" summary="增加了元素和中诚信的常量">
+      <created>1545485978987</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1545485978988</updated>
+    </task>
+    <task id="LOCAL-00051" summary="中诚信、元素报文解析">
+      <created>1545614371561</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614371561</updated>
+    </task>
+    <task id="LOCAL-00052" summary="修改类名，以标注为安硕同元素、中诚信区分">
+      <created>1545614463380</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614463380</updated>
+    </task>
+    <task id="LOCAL-00053" summary="修改了两个bug:去除%和isNumber两个方法的小bug">
+      <created>1545614540139</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614540140</updated>
+    </task>
+    <task id="LOCAL-00054" summary="元素征信的测试文件">
+      <created>1545614597699</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614597700</updated>
+    </task>
+    <task id="LOCAL-00055" summary="元素、中诚信、安硕数据解析入标准库统一代码">
+      <created>1545617983094</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1545617983095</updated>
+    </task>
+    <task id="LOCAL-00056">
+      <created>1545618168548</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618168548</updated>
+    </task>
+    <task id="LOCAL-00057">
+      <created>1545618257083</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618257083</updated>
+    </task>
+    <task id="LOCAL-00058" summary="2018.12.17">
+      <created>1545618296848</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618296848</updated>
+    </task>
+    <task id="LOCAL-00059" summary="isNumeric把浮点数结构给忘记了，所以，加上小数点“.”。">
+      <created>1545618402162</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618402162</updated>
+    </task>
+    <task id="LOCAL-00060">
+      <created>1545618507447</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618507448</updated>
+    </task>
+    <task id="LOCAL-00061" summary="司法解析">
+      <created>1545639584091</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1545639584091</updated>
+    </task>
+    <task id="LOCAL-00062" summary="司法解析">
+      <created>1545639620759</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1545639620759</updated>
+    </task>
+    <task id="LOCAL-00063" summary="司法解析">
+      <created>1545639714715</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1545639714715</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
+    <option name="trackContextForNewChangelist" value="true" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 14h 06m 41s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 14h 07m 42s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 23m 32s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 23m 37s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 23m 44s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 25m 35s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 31m 24s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 32m 05s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 33m 54s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_cxxVoidString - 2018.12.24 at 15h 34m 00s.xml">
+      <configuration name="R1103.cxxVoidString" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="590666000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-4" y="-4" width="1374" height="776" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53669727" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21712539" sideWeight="0.4705438" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6299694" sideWeight="0.34063444" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5535168" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6116208" sideWeight="0.65936553" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34441087" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5856269" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="584" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5856269" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6299694" sideWeight="0.34063444" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.559633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53669727" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5259939" sideWeight="0.4705438" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="584" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6116208" sideWeight="0.65936553" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74006116" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2666163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5856269" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="R1103接口报文所对应的标准表对象" />
+    <MESSAGE value="实时报文清洗到各个所对应的标准表" />
+    <MESSAGE value="报文到mysql数据库想对应的标准表！" />
+    <MESSAGE value="已经更换到其他目录" />
+    <MESSAGE value="修改成员变量位置" />
+    <MESSAGE value="清洗规则" />
+    <MESSAGE value="将uuid转换成uuID" />
+    <MESSAGE value="uuid--&gt;uuID" />
+    <MESSAGE value="合并王飞马八个标准表接口、XML和对象文件等！" />
+    <MESSAGE value="std_legal_ind_unexecute_list表类对象成员变量为小写" />
+    <MESSAGE value="R227、R228、R229、R230、R231报文格式有变化，形成了jsonArray模式，所有，我在这里更改了入库程序" />
+    <MESSAGE value="测试R227程序" />
+    <MESSAGE value="数据库部分字段数据编程了Datetime  所以，对象要改成Date" />
+    <MESSAGE value="添加了数据来源成员变量" />
+    <MESSAGE value="添加数据来源程序" />
+    <MESSAGE value="添加了元素、中诚信、安硕数据分别存入HBASE" />
+    <MESSAGE value="增加了元素和中诚信的常量" />
+    <MESSAGE value="中诚信、元素报文解析" />
+    <MESSAGE value="修改类名，以标注为安硕同元素、中诚信区分" />
+    <MESSAGE value="修改了两个bug:去除%和isNumber两个方法的小bug" />
+    <MESSAGE value="元素征信的测试文件" />
+    <MESSAGE value="元素、中诚信、安硕数据解析入标准库统一代码" />
+    <MESSAGE value="2018.12.17" />
+    <MESSAGE value="isNumeric把浮点数结构给忘记了，所以，加上小数点“.”。" />
+    <MESSAGE value="司法解析" />
+    <option name="LAST_COMMIT_MESSAGE" value="司法解析" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="CHANGE_BROWSER_SETTINGS">
+      <map>
+        <entry key="svn">
+          <value>
+            <ChangeBrowserSettings />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/CCXETLInsertData.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/CCXETLInsertData.java</url>
+          <line>78</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="109" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdLegalIndividualExecuted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2208">
+          <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdLegalIndUnexecuted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2369">
+          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding>
+            <element signature="method#setDatasourcefrom#0;class#StdLegalIndUnexecuted#0" expanded="false" />
+            <element signature="method#setPerformance#0;class#StdLegalIndUnexecuted#0" expanded="false" />
+            <element signature="method#setDisrupttypename#0;class#StdLegalIndUnexecuted#0" expanded="false" />
+            <element signature="e#3998#3999#0" expanded="false" />
+            <element signature="e#4028#4029#0" expanded="false" />
+            <element signature="e#4072#4073#0" expanded="false" />
+            <element signature="e#4110#4111#0" expanded="false" />
+            <element signature="e#4146#4147#0" expanded="false" />
+            <element signature="e#4180#4181#0" expanded="false" />
+            <element signature="e#4232#4233#0" expanded="false" />
+            <element signature="e#4278#4279#0" expanded="false" />
+            <element signature="e#4312#4313#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="false" />
+            <element signature="e#4392#4393#0" expanded="false" />
+            <element signature="e#4434#4435#0" expanded="false" />
+            <element signature="e#4469#4470#0" expanded="false" />
+            <element signature="e#4502#4503#0" expanded="false" />
+            <element signature="e#4552#4553#0" expanded="false" />
+            <element signature="e#4596#4597#0" expanded="false" />
+            <element signature="e#4631#4632#0" expanded="false" />
+            <element signature="e#4664#4665#0" expanded="false" />
+            <element signature="e#4714#4715#0" expanded="false" />
+            <element signature="e#4758#4759#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/constant/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/中诚信/ETLInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35006">
+          <caret line="2255" column="55" lean-forward="false" selection-start-line="2255" selection-start-column="23" selection-end-line="2255" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/numberTest/numberTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/etlclean/EtlCleanRules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="144" column="6" lean-forward="true" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
+          <folding>
+            <element signature="method#deleteSpace#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#deletePercentSign#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#deleteSpecialCharacters#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#deleteZero#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="docComment;method#changeDirectionh#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#changeDirectionh#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="docComment;method#stampToDate#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#stampToDate#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#amountConversion#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#dateFormatCleaning#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#amountDeleteComma#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#deletePlus#0;class#EtlCleanRules#0" expanded="false" />
+            <element signature="method#deleteMinus#0;class#EtlCleanRules#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/business/basics/IdeQuotasBusiServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="88" column="45" lean-forward="true" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/business/basics/IdeQuotasBusiService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#1464#1658#0" expanded="false" />
+            <element signature="e#1657#1658#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunBefores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="370" column="0" lean-forward="false" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
+          <folding>
+            <element signature="e#2922#2923#0" expanded="false" />
+            <element signature="e#2966#2967#0" expanded="false" />
+            <element signature="e#10310#10449#0" expanded="false" />
+            <element signature="e#10448#10449#0" expanded="false" />
+            <element signature="e#11040#11204#0" expanded="false" />
+            <element signature="e#11203#11204#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/pojo/applicantinformation/ApplicantInformationTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="129" column="16" lean-forward="false" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="16" />
+          <folding>
+            <element signature="e#2155#2156#0" expanded="false" />
+            <element signature="e#2198#2199#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/JudgeAnynasisReadDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/JudgeAnynasisWriteDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/JudicialAnalysisImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/JudgeAnalysisTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/LegalStructuredData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/LegalDataAdded.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisReadDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/yxx/yxx/sfanalysisutils/CollectionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/collection/CollectionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-322">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/stringutils/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <element signature="method#extractBlank#0;class#StringUtils#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/commonutil/CommonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisReadDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="78" lean-forward="false" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
+          <folding>
+            <marker date="1545638708022" expanded="true" signature="447:565" ph="SELECT trim(... EDS_SS_ADD_ROLECHECK_MAPPING" />
+            <marker date="1545638708022" expanded="true" signature="728:876" ph="SELECT DISTI... EDS_SS_ADD_AJJGDKHYX_RULE" />
+            <marker date="1545638708022" expanded="true" signature="1061:1924" ph="SELECT DISTI... EDS_SS_ADD_RESULT_REGEX" />
+            <marker date="1545638708022" expanded="true" signature="2101:2565" ph="SELECT trim(... *" />
+            <marker date="1545638708022" expanded="true" signature="2168:2543" ph="SELECT a.* F... EDS_SS_ADD_AYFL_A" />
+            <marker date="1545638708022" expanded="true" signature="2374:2475" ph="SELECT 1 FRO... EDS_SS_ADD_AYFL_B" />
+            <marker date="1545638708022" expanded="true" signature="2677:2815" ph="SELECT trim(... " />
+            <marker date="1545638708022" expanded="true" signature="2923:3019" ph="SELECT trim(... " />
+            <marker date="1545638708022" expanded="true" signature="3130:3230" ph="SELECT trim(... " />
+            <marker date="1545638708022" expanded="true" signature="3339:3425" ph="SELECT trim(... " />
+            <marker date="1545638708022" expanded="true" signature="3545:3652" ph="SELECT trim(... " />
+            <marker date="1545638708022" expanded="true" signature="3771:3866" ph="SELECT trim(... EDS_SS_ADD_ROLECHECK_REGEX" />
+            <marker date="1545638708022" expanded="true" signature="3976:4074" ph="SELECT trim(... " />
+            <marker date="1545638708022" expanded="true" signature="4184:4296" ph="SELECT trim(... " />
+            <marker date="1545638708022" expanded="true" signature="4442:4481" ph="SELECT * FRO... STD_LEGAL_DATA_STRUCTURED" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test/YSAnynasisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/sfanalysisutils/CNNMFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/JsonParse/R1103.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/sfanalysisutils/CommonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/AmarsoftETLInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlClean#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntSharesImpawnList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntMorGuainfoList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLiquidationList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntInvitemList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntFiliationList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntCaseInfoList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntSharesfrostList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntShareHolderList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntPersonList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntMorDetailList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLrpositionList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLrinvList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntBasicList#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntR1104#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalEnterpriseExecutedR228#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalIndUnexecutedR231#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalIndividualExecutedR229#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalEntUnexecutedR230#0;class#AmarsoftETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalDataStructuredR227#0;class#AmarsoftETLInsertData#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/ElementsCreditETLInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlClean#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="e#985#1003#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntSharesfrostList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntSharesfrostList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntSharesImpawnList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntSharesImpawnList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntShareHolderList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntShareHolderList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntPersonList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntPersonList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntMorGuainfoList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntMorGuainfoList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntLrpositionList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLrpositionList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntLrinvList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLrinvList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntLiquidationList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLiquidationList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntInvitemList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntInvitemList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntFiliationList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntFiliationList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntCaseInfoList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntCaseInfoList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntBasicList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntBasicList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="docComment;method#etlCleanStdEntAlterList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntAlterList#0;class#ElementsCreditETLInsertData#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/CCXETLInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="method#etlCleanStdEntFiliationList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLiquidationList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntSharesfrostList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntBasicList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntCaseInfoList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntInvitemList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLrinvList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntLrpositionList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntMorGuainfoList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntPersonList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalIndUnexecutedR231#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalEntUnexecutedR230#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalIndividualExecutedR229#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdLegalEnterpriseExecuted#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntShareHolderList#0;class#CCXETLInsertData#0" expanded="false" />
+            <element signature="method#etlCleanStdEntSharesImpawnList#0;class#CCXETLInsertData#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntAlterList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisWriteDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisWriteDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="95" lean-forward="true" selection-start-line="15" selection-start-column="95" selection-end-line="15" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/exception/ErrorCodeIDE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="666" column="23" lean-forward="false" selection-start-line="666" selection-start-column="23" selection-end-line="666" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/pojo/legalbean/LegalStructuredData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/pojo/legalbean/LegalDataAdded.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudgeAnalysisTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="31" column="80" lean-forward="true" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudicialAnalysisImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="165" column="62" lean-forward="true" selection-start-line="165" selection-start-column="62" selection-end-line="165" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test/JudgeAnynasisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/KafkaConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/json/JsonAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/quotas/QuotasTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/SendDataToKafka.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/json/JsonSplice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/hbase/HBaseOperater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="90" column="35" lean-forward="true" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>wybigdata</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.4510345" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:druid:1.0.9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

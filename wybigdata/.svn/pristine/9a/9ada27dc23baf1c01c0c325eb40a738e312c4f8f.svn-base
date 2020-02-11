@@ -1,0 +1,43 @@
+package com.dfwy.online.sparkstreamingtask.dao;
+
+import com.dfwy.online.sparkstreamingtask.jsondemo.JsonDemoObject;
+import common.pojo.etlstandardtable.*;
+import common.utils.exception.DaoException;
+import java.util.List;
+
+
+public interface ETLCleanWriteDao {
+
+	void inserjsonDemoObjectList(List<JsonDemoObject> jsonDemoObjectList) throws DaoException;
+
+	void inserStdEntAlterListList(List<StdEntAlterList> StdEntAlterListList) throws DaoException;
+
+	void inserStdEntBasicListList(List<StdEntBasicList> stdEntBasicListList)throws DaoException;
+	//json kong
+    void inserStdEntCaseInfoListList(List<StdEntCaseInfoList> stdEntCaseInfoListList)throws DaoException;
+	//json kong
+    void inserStdEntFiliationListList(List<StdEntFiliationList> stdEntFiliationListList)throws DaoException;
+	//json kong
+    void inserStdEntInvitemListList(List<StdEntInvitemList> stdEntInvitemListList)throws DaoException;
+	//json kong
+    void inserStdEntLiquidationListList(List<StdEntLiquidationList> stdEntLiquidationListList)throws DaoException;
+
+    void inserStdEntLrinvListList(List<StdEntLrinvList> stdEntLrinvListList)throws DaoException;
+
+    void inserStdEntLrpositionListList(List<StdEntLrpositionList> stdEntLrpositionListList)throws DaoException;
+
+	void inserStdEntMorDetailListList(List<StdEntMorDetailList> stdEntMorDetailListList)throws DaoException;
+	//json kong
+	void inserStdEntMorGuainfoListList(List<StdEntMorGuainfoList> stdEntMorGuainfoListList)throws DaoException;
+
+	void inserStdEntPersonListList(List<StdEntPersonList> tdEntPersonListList)throws DaoException;
+
+	void inserStdEntShareHolderListList(List<StdEntShareHolderList> StdEntShareHolderListList)throws DaoException;
+
+	void inserStdEntSharesfrostListList(List<StdEntSharesfrostList> stdEntSharesfrostListList)throws DaoException;
+	//json kong
+	void inserStdEntSharesImpawnListList(List<StdEntSharesImpawnList> stdEntSharesImpawnListList)throws DaoException;
+
+}
+
+

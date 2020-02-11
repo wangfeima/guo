@@ -1,0 +1,293 @@
+package common.utils.hbase;
+import common.pojo.hbase.HBaseData;
+import common.utils.stringutils.StringUtils;
+import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.*;
+import org.apache.hadoop.hbase.client.Admin;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.filter.CompareFilter;
+import org.apache.hadoop.hbase.filter.RowFilter;
+import org.apache.hadoop.hbase.filter.SubstringComparator;
+import org.apache.hadoop.hbase.util.Bytes;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.client.*;
+
+
+import java.io.IOException;
+import java.util.*;
+
+import static common.constant.Constants.Dfwybank_VCloude_Hbase_Zookeeper_Property_ClientPort;
+import static common.constant.Constants.Dfwybank_VCloude_Hbase_Zookeeper_Quorum;
+import static common.constant.Constants.Dfwybank_VCloude_Hbase_Zookeeper_Znode_Parent;
+
+public class HBaseUtils {
+    //配置变量信息
+    private static Connection conn;
+    private static Configuration conf;
+    // 创建连接
+    public static Connection getCon() throws Exception {
+        //从配置文件获取HBase配置
+        conf = HBaseConfiguration.create(); // 获得配制文件对象
+        conf.set("hbase.zookeeper.quorum",Dfwybank_VCloude_Hbase_Zookeeper_Quorum);
+        conf.set("hbase.zookeeper.property.clientPort", Dfwybank_VCloude_Hbase_Zookeeper_Property_ClientPort);
+        conf.set("zookeeper.znode.parent", Dfwybank_VCloude_Hbase_Zookeeper_Znode_Parent);
+        if (conn == null || conn.isClosed()) {
+            conn = ConnectionFactory.createConnection(conf);
+        }
+        return conn;
+    }
+    /**
+     * 关闭连接
+     */
+    public static void close() {
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    /**
+     * 建表和列簇
+     *online.streaming.hbase shell------> create 'tableName','列族1'，'列族2'
+     * @throws Exception
+     */
+    public static void createTable(String tableName, ArrayList<String> columnFamilys) throws Exception {
+        //获取一个表的管理器
+        Admin admin = conn.getAdmin();
+        //构造一个表描述器，并指定表名
+        HTableDescriptor tableDescriptor = new HTableDescriptor(TableName.valueOf(tableName.getBytes()));
+        //构造一个列族描述器，并指定列族名 iter快捷键
+        if (admin.tableExists(TableName.valueOf(tableName))) {
+            admin.disableTable(TableName.valueOf(tableName));
+            admin.deleteTable(TableName.valueOf(tableName));
+        }
+        for (String columnFamily : columnFamilys) {
+            HColumnDescriptor hcd1 = new HColumnDescriptor(columnFamily);
+            // 为该列族设定一个版本数量（最小版本和最大版本）
+            hcd1.setVersions(1, 3);
+            // 将列族描述器添加到表描述器中
+            tableDescriptor.addFamily(hcd1);
+        }
+        //创建表---健壮性还是要再增加些，如果表存在就不再创建表了！
+        admin.createTable(tableDescriptor);
+        //关闭
+        admin.close();
+    }
+
+    /**
+     * 根据表、Rowkey、列簇、列插入一个数据
+     * @param tableName 表
+     * @param row RowKey
+     * @param columnFamily 列簇
+     * @param column    列族
+     * @param data  数据
+     * @throws IOException
+     */
+    public static void putData(String tableName, String row, String columnFamily, String column, String data)
+            throws IOException {
+        Table table = conn.getTable(TableName.valueOf(tableName));
+        try {
+            Put put = new Put(Bytes.toBytes(row));
+            put.addColumn(Bytes.toBytes(columnFamily), Bytes.toBytes(column), Bytes.toBytes(data));
+            table.put(put);
+        } finally {
+            table.close();
+        }
+    }
+
+
+    /**
+     * 根据表、Rowkey、列簇、列插入一组数据
+     * @param tableName
+     * @param row
+     * @param columnFamily
+     * @param columnAndValue
+     * @throws IOException
+     */
+    public  static void putData(String tableName,String row,String columnFamily,Map<String,String> columnAndValue) throws IOException {
+        Table table=conn.getTable(TableName.valueOf(tableName));
+        try {
+            Put put = new Put(Bytes.toBytes(row));
+            Set<String> strings = columnAndValue.keySet();
+            for (String s : strings) {
+                if (StringUtils.isNotEmpty(columnAndValue.get(s))){
+                    put.addColumn(Bytes.toBytes(columnFamily), Bytes.toBytes(s), Bytes.toBytes(columnAndValue.get(s)));
+                    System.out.println("HBase数据库"+columnFamily + s + "值：" + columnAndValue.get(s));
+                }
+            }
+            table.put(put);
+        } finally {
+            table.close();
+        }
+    }
+
+    /**
+     *scan全表数据
+     *有多少列就有多少对象，只不过，在同一个RowKey下的列对象中的RowKey和列族成员变量的值是一样的！
+     * @param tableName
+     */
+    public static List<HBaseData> scanerTable(String tableName) throws Exception {
+        List<HBaseData> hbaseDataList = new ArrayList<HBaseData>();
+        Table table = conn.getTable(TableName.valueOf(tableName));
+        Scan scan = new Scan();
+        ResultScanner rs = table.getScanner(scan);
+        for (Result r : rs) {
+            for (Cell cell : r.rawCells()) {
+                HBaseData hBaseData = new HBaseData();
+                //传入rowKey
+                hBaseData.setRowKeyName(new String(CellUtil.cloneRow(cell)));
+                //传入时间戳
+                hBaseData.setTimeStamp(cell.getTimestamp() + "");
+                //传入列族
+                hBaseData.setColumnFamily(new String(CellUtil.cloneFamily(cell)));
+                //传入列
+                hBaseData.setColumn(new String(CellUtil.cloneQualifier(cell)));
+                //传入数值
+                hBaseData.setValue(new String(CellUtil.cloneValue(cell)));
+                hbaseDataList.add(hBaseData);
+            }
+        }
+        rs.close();
+        return hbaseDataList;
+    }
+
+
+    /**
+     *根据rowKey进行字段的过滤
+     * @param tableName 表名
+     * @param rowFilterName rowKey过滤字段
+     * @return 有多少列就有多少对象，只不过，在同一个RowKey下的列对象中的RowKey和列族成员变量的值是一样的！
+     * @throws Exception
+     */
+    public static List<HBaseData> scanRowKeyFilter(String tableName,String rowFilterName) throws Exception {
+        List<HBaseData> hbaseDataList = new ArrayList<HBaseData>();
+        Table table = conn.getTable(TableName.valueOf(tableName));
+        RowFilter rf = new RowFilter(CompareFilter.CompareOp.EQUAL ,
+                new SubstringComparator(rowFilterName));
+        //过滤模式还有下列模式
+        //new BinaryPrefixComparator(value) //匹配字节数组前缀
+        //new RegexStringComparator(expr) // 正则表达式匹配
+        //new SubstringComparator(substr)// 子字符串匹配
+        Scan scan = new Scan();
+        scan.setFilter(rf);
+        ResultScanner rs = table.getScanner(scan);
+        for (Result r : rs) {
+            for (Cell cell : r.rawCells()) {
+                HBaseData hBaseData = new HBaseData();
+                //传入rowKey
+                hBaseData.setRowKeyName(new String(CellUtil.cloneRow(cell)));
+                //传入时间戳
+                hBaseData.setTimeStamp(cell.getTimestamp() + "");
+                //传入列族
+                hBaseData.setColumnFamily(new String(CellUtil.cloneFamily(cell)));
+                //传入列
+                hBaseData.setColumn(new String(CellUtil.cloneQualifier(cell)));
+                //传入数值
+                hBaseData.setValue(new String(CellUtil.cloneValue(cell)));
+                hbaseDataList.add(hBaseData);
+            }
+        }
+        rs.close();
+        return hbaseDataList;
+    }
+
+    /**
+     * @param rowKey
+     * @param tableName
+     * @return 返回值是一个map集合，里面储存了同一个RowKey下的所有列族的列数据  {data:a=b, data:c=d, info:c=d, info:a=b}
+     */
+    public static Map<String,String> getOneRow(String rowKey, String tableName){
+        Table table= null;
+        Result result=null;
+        Map<String, String> subMap = new HashMap<String, String>();
+        try {
+            table=conn.getTable(TableName.valueOf(tableName));
+            Get get = new Get(rowKey.getBytes());
+            result=table.get(get);
+            for (Cell cell : result.rawCells()) {
+                subMap.put(new String(CellUtil.cloneFamily(cell))+":"+new String(CellUtil.cloneQualifier(cell)), new String(CellUtil.cloneValue(cell)));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                table.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return subMap;
+    }
+
+    /**
+     * 删除表中数据
+     * @param tableName
+     * @param row
+     * @param columnFamily
+     * @param column
+     * @throws Exception
+     */
+    public static void delData(String tableName, String row, String columnFamily, String column) throws Exception {
+        //获取table对象
+        Table table = conn.getTable(TableName.valueOf(tableName));
+        //获取delete对象,需要一个rowkey
+        Delete delete = new Delete(row.getBytes());
+        //在delete对象中指定要删除的列族-列名称
+        delete.addColumn(columnFamily.getBytes(), column.getBytes());
+        //执行删除操作
+        table.delete(delete);
+        //关闭
+        table.close();
+    }
+
+    /**
+     * 删除表
+     * @throws Exception online.streaming.hbase shell     disable 't_user_info'     drop 't_user_info'
+     */
+    public static void dropTable(String tableName) throws Exception {
+        //获取一个表的管理器
+        Admin admin = conn.getAdmin();
+        //删除表时先需要disable，将表置为不可用，然后在delete
+        admin.disableTable(TableName.valueOf(tableName));
+        admin.deleteTable(TableName.valueOf(tableName));
+        admin.close();
+    }
+
+    /**
+     *为表tableName打一个快照snapshotName，快照并不涉及数据移动，可以在线完成
+     * @param snapshotName
+     * @param tableName
+     * @throws IOException
+     */
+    public static void snapshot(String snapshotName, String tableName) throws IOException {
+        Admin admin= conn.getAdmin();
+        admin.snapshot(snapshotName, TableName.valueOf(tableName));//默认是flush的
+        admin.close();
+    }
+
+    /**
+     *根据快照恢复出一个新表，恢复过程不涉及数据移动，可以在秒级完成
+     * @param snapshotName
+     * @param tableName
+     * @throws IOException
+     */
+    public static void cloneSnapshot(String snapshotName, String tableName)throws IOException {
+        Admin admin= conn.getAdmin();
+        admin.cloneSnapshot(snapshotName, TableName.valueOf(tableName));
+        admin.close();
+    }
+
+    /**
+     * 删除数据库快照
+     * @param snapshotName
+     * @throws IOException
+     */
+    public static void deleteSnapshot(String snapshotName)throws IOException  {
+        Admin admin=conn.getAdmin();
+        admin.deleteSnapshot(snapshotName);
+        admin.close();
+    }
+}

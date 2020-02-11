@@ -1,0 +1,381 @@
+package JsonParse;
+
+import com.dfwy.online.sparkstreamingtask.business.basics.IdeQuotasBusiService;
+import com.dfwy.online.sparkstreamingtask.business.basics.IdeQuotasBusiServiceImpl;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.ETLInsertData;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.JsonAnalysis;
+import common.pojo.applicantinformation.ApplicantInformationTO;
+import common.pojo.etlstandardtable.StdEntBasicList;
+import common.pojo.hbase.HBaseData;
+import common.pojo.quotas.QuotasDataValueEntity;
+import common.utils.json.common.FirstParse;
+import common.pojo.jsonfirstrootbean.JsonFirstRootBean;
+import common.pojo.r1103.*;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
+import common.utils.stringutils.StringUtils;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+import java.util.Vector;
+
+
+import static common.utils.json.r1103.R1103Parse.getR1103Object;
+
+
+public class R1103 {
+    private static String data;
+    private BufferedReader br = null;
+    private StringBuffer sb = null;
+
+    @Before
+    public void readText() throws Exception {
+          /* 读入TXT文件 */
+        String fileName = "D:\\工商司法信息数据样例.txt"; // 绝对路径或相对路径都可以，这里是绝对路径，写入文件时演示相对路径
+        //读取文件D:\工商司法信息数据样例.txt
+        try {
+            br = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), "utf-8")); //这里可以控制编码
+            sb = new StringBuffer();
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        data = new String(sb); //StringBuffer ==> String
+    }
+@Test
+public void  object2json(){
+    HBaseData hBaseData = new HBaseData();
+    hBaseData.setColumn("1");
+    hBaseData.setColumnFamily("2");
+    hBaseData.setRowKeyName("3");
+    hBaseData.setTimeStamp("4");
+    hBaseData.setValue("5");
+
+    final Object o = JSON.toJSON(hBaseData);
+    final String s = StringUtils.objToStr(o);
+    System.out.println(s);
+}
+
+
+@Test
+public void a() throws ClassNotFoundException {
+    ApplicantInformationTO applicantInformationTO = JsonAnalysis.json2Object(data);
+    //指标计算接口
+    IdeQuotasBusiService ideQuotasBusiService = new IdeQuotasBusiServiceImpl();
+    //指标计算值对象集合获得
+    Vector<QuotasDataValueEntity> dataValueList = ideQuotasBusiService.execQuotas(applicantInformationTO, "A", "1");
+}
+
+
+
+
+@Test
+public void aVoidSrring() throws Exception {
+    //将传输过来的报文数据封装进申请人实例中，做数据的传输！
+   ApplicantInformationTO applicantInformationTO = JsonAnalysis.json2Object(data);
+    applicantInformationTO.setDataSourceFrom("amarsoftData");
+     ETLInsertData.etlCleanStdEntAlterList(applicantInformationTO.getAmarsoftData(),
+                                            applicantInformationTO.getBusinessID(),
+                                            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntBasicList(applicantInformationTO.getAmarsoftData(),
+                                            applicantInformationTO.getBusinessID(),
+                                            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntCaseInfoList(applicantInformationTO.getAmarsoftData(),
+                                            applicantInformationTO.getBusinessID(),
+                                            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntFiliationList(applicantInformationTO.getAmarsoftData(),
+                                            applicantInformationTO.getBusinessID(),
+                                            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntInvitemList(applicantInformationTO.getAmarsoftData(),
+                                            applicantInformationTO.getBusinessID(),
+                                            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntLiquidationList(applicantInformationTO.getAmarsoftData(),
+                                            applicantInformationTO.getBusinessID(),
+                                            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntLrinvList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntLrpositionList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntMorDetailList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntMorGuainfoList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntPersonList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntShareHolderList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntSharesImpawnList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+    ETLInsertData.etlCleanStdEntSharesfrostList(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+
+
+    ETLInsertData.etlCleanStdLegalDataStructuredR227(applicantInformationTO.getAmarsoftData(),
+            applicantInformationTO.getBusinessID(),
+            applicantInformationTO.getReqID(),applicantInformationTO.getDataSourceFrom());
+
+
+
+}
+
+@Test
+public void bVoidString() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException {
+
+    StdEntBasicList stdEntBasicList=new StdEntBasicList();
+    stdEntBasicList.setAddress("dongxiaoxuanshishabi!!!");
+/*    Class clazz = Class.forName("common.pojo.etlstandardtable.StdEntBasicList");
+    Object obj = clazz.newInstance();//通过反射创建对象*/
+    // 调用getDeclaredField("name") 取得name属性对应的Field对象
+    Field f = stdEntBasicList.getClass().getDeclaredField("address");
+    // 取消属性的访问权限控制，即使private属性也可以进行访问。
+    f.setAccessible(true);
+    // 调用get()方法取得对应属性值。
+    System.out.println(f.get(stdEntBasicList));  //相当于obj.getName();
+    // 调用set()方法给对应属性赋值。
+    f.set(stdEntBasicList, "lkl");  //相当于obj.setName("lkl");
+    // 调用get()方法取得对应属性修改后的值。
+    System.out.println(f.get(stdEntBasicList));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Json转成Java对象
+     */
+    public static JsonFirstRootBean jsonString2HBaseObject(String str) {
+        JsonFirstRootBean jsonObject = JSON.parseObject(str, new TypeReference<JsonFirstRootBean>() {
+        });
+        return jsonObject;
+    }
+
+    /**
+     * Json转成Java对象
+     * 测试方法
+     */
+    @Test
+    public void json2Object() {
+        JsonFirstRootBean javaPojo = (JsonFirstRootBean) jsonString2HBaseObject(data);
+        System.out.println(javaPojo.getUuid());
+    }
+    @Test
+    public void personList() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<Person> personList = r1103Data1.getPersonList();
+            for (Person person : personList) {
+                System.out.println(person.getName());
+            }
+        }
+    }
+
+    @Test
+    public void alterList() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<Alter> alterList = r1103Data1.getAlterList();
+            for (Alter alter : alterList) {
+                System.out.println(alter.getAltDate());
+            }
+        }
+    }
+
+
+    @Test
+    public void basicList() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<Basic> basicList = r1103Data1.getBasicList();
+            for (Basic basic : basicList) {
+                System.out.println(basic.getAddress());
+            }
+        }
+    }
+
+    @Test
+    public void frPositionList() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<FrPosition> frPositionList = r1103Data1.getFrPositionList();
+            for (FrPosition frPosition : frPositionList) {
+                System.out.println(frPosition.getEntName());
+            }
+        }
+    }
+
+    @Test
+    public void FrinvList() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<Frinv> FrinvList = r1103Data1.getFrinvList();
+            for (common.pojo.r1103.Frinv Frinv : FrinvList) {
+                System.out.println(Frinv.getEntName());
+            }
+        }
+    }
+
+
+    @Test
+    public void MorDetail() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<MorDetail> MorDetail = r1103Data1.getMorDetailList();
+            for (common.pojo.r1103.MorDetail morDetail : MorDetail) {
+                System.out.println(morDetail.getMortgaGor());
+            }
+        }
+    }
+
+    @Test
+    public void shareHolder() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<ShareHolder> ShareHolder = r1103Data1.getShareHolderList();
+            for (common.pojo.r1103.ShareHolder morDetail : ShareHolder) {
+                System.out.println(morDetail.getCountry());
+            }
+        }
+    }
+
+    @Test
+    public void sharesFrost() {
+        String code = FirstParse.getData(data, "R1103", "code");
+        String msg = FirstParse.getData(data, "R1103", "msg");
+        String r1103Data = FirstParse.getData(data, "R1103", "data");
+        System.out.println(code);
+        List<R1103Data> r1103Object = getR1103Object(r1103Data);
+        for (R1103Data r1103Data1 : r1103Object) {
+            List<SharesFrost> sharesFrost = r1103Data1.getSharesFrostList();
+            for (SharesFrost morDetail : sharesFrost) {
+                System.out.println(morDetail.getFroTo());
+            }
+        }
+    }
+
+
+
+    @Test
+    public void splitTest(){
+        String string="股东名录:   法人股东:德正资源控股有限公司 4650 江西国际信托股份有限公司 80000   自然人股东: 卢春雷 300 张晶先 50  ";
+        string=string.replace("股东名录:","");
+        string=string.replace("法人股东:","");
+        string=string.replace("自然人股东:","");
+        //string:= 德正资源控股有限公司 4650 江西国际信托股份有限公司 80000  卢春雷 300 张晶先 50
+        System.out.println("string:="+string);
+        string=string.trim();
+        //string:=德正资源控股有限公司 4650 江西国际信托股份有限公司 80000  卢春雷 300 张晶先 50
+        System.out.println("string:="+string);
+        string = string.replaceAll(" {2,}", " ");
+        String[] split = string.split(" ");
+        //8
+        System.out.println(split.length);
+        for (String s : split) {
+            /*
+                s:德正资源控股有限公司
+                s:4650
+                s:江西国际信托股份有限公司
+                s:80000
+                s:卢春雷
+                s:300
+                s:张晶先
+                s:50
+            */
+            System.out.println("s:"+s);
+
+            //“姓名: 张三; 出资额: 20; 百分比: 2 企业名称: 李四; 出资额: 30;百分比: 3” 【altaf】=“企业名称: 李四; 出资额: 30;百分比: 3”
+        }
+    }
+
+    @Test
+    public void stringaa(){
+        System.out.print("aaa"+System.getProperty("line.separator"));
+        System.out.print("bbb");
+        System.out.print("ccc");
+
+    }
+
+
+    @Test
+    public void StringTest(){
+        String string="姓名: 张三; 出资额: 20; 百分比: 2 企业名称: 李四; 出资额: 30;百分比: 3";
+        if (string.contains("姓名")|string.contains("企业名称")){
+            string= string.replaceAll(" +","");
+        }
+        //姓名:张三;出资额:20;百分比:2企业名称:李四;出资额:30;百分比:3
+        System.out.println(string);
+        //姓名:张三     出资额:20     百分比:2企业名称:李四     出资额:30     百分比:3
+        String[] split = string.split(";");
+        for (String s : split) {
+            if (s.contains("姓名")|s.contains("企业名称")){
+                final String[] split1 = s.split(":");
+                if (split1.length>2){
+                    System.out.println("2："+split1[2]);
+                }else if(split1.length<=2){
+                    System.out.println("1："+split1[1]);
+                }
+            }
+        }
+
+    }
+}
+
+

@@ -1,0 +1,207 @@
+package common.utils.etlclean;
+import com.mysql.jdbc.CachedResultSetMetaData;
+import common.utils.date.DateUtils;
+import common.utils.stringutils.StringUtils;
+import org.glassfish.jersey.internal.util.collection.StringIgnoreCaseKeyComparator;
+import py4j.StringUtil;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * @author: dxx
+ * @version: V-Cloude
+ * @date: 2018/12/14 15:45
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ * @file_name: wybigdata
+ * @pachage_name: common.utils.etlclean
+ * @description:原始数据向标准数据清洗规则
+ */
+public class EtlCleanRules {
+    /*
+    * @Description: 删除字符串两端空格
+    * @param: [str]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 15:54
+    */
+    public static String deleteSpace(String string) {
+        if (StringUtils.isNotEmpty(string)) {
+            return StringUtils.trim(string);
+        } else {
+            return "";
+        }
+    }
+    /*
+    * @Description: 删除所有空格 （12）
+    * @param: [string]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/20 13:26
+    */
+    public static String deleteAllSpace(String string){
+       return StringUtils.extractBlank(string);
+    }
+    /*
+    * @Description:
+    * string为空，返回0.0;如果返回带%将百分制转double;如果不带%则直接转成double返回 (11)
+    * @param: [string, number]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 16:17
+    */
+    public static double deletePercentSign(String string) throws ParseException {
+        if (StringUtils.isNotEmpty(string)) {
+            if (string.contains("%")) {
+                return StringUtils.stringToDouble(string.replaceAll("[^0-9.%]+", ""));
+            } else {
+                return Double.parseDouble(string.replaceAll("[^0-9.]+", ""));
+            }
+        }
+        return 0.00;
+    }
+    /*
+    * @Description: 删除特殊字符 (18)
+    * @param: [string, specialCharacters]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 16:23
+    */
+    public static String deleteSpecialCharacters(String string) {
+        return StringUtils.retainTheSpecifiedCharacter(string);
+    }
+
+    /*
+    * @Description: 删除数字前多余的0，比如001500变成1500 (17)
+    * @param: [string]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 16:20
+    */
+    public static String deleteZero(String frontStr) {
+        if (StringUtils.isNotEmpty(frontStr)){
+            return  frontStr.replaceAll("^(0+)", "");
+        }else {
+            return "";
+        }
+    }
+    /**
+     * Wfm
+     * 将"/"替换成"-"
+     * @param strDir
+     * @return
+     */
+    public static String changeDirectionh(String strDir) {
+        String s = "/";
+        String a = "-";
+        if (strDir != null && !" ".equals(strDir)) {
+            if (strDir.contains(s)) {
+                strDir = strDir.replace(s, a);
+            }
+        }
+        return strDir;
+    }
+    /**
+     * Wfm
+     * 将时间戳转换为时间
+     * @param
+     * @return
+     */
+    public static String stampToDate(String s){
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        long lt = new Long(s);
+        Date date = new Date(lt);
+        res = simpleDateFormat.format(date);
+        return res;
+    }
+    /*
+    * @Description: 金额转换
+    * @param: [amount]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/20 9:33
+    */
+    public static String amountConversion(String amount){
+        if (StringUtils.isNotEmpty(amount)){
+            return EtlCleanRules.deleteZero(EtlCleanRules.deleteSpecialCharacters(amount));
+        }else {
+            return "";
+        }
+    }
+    /*String date = dateFormatCleaning("1989/09!@#^&*().01 09:10:00");
+    * @Description: 日期格式的清洗(19)
+    * @param: [strSource]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/20 12:09
+    */
+    public static String dateFormatCleaning(String strSource){
+        String s1 = StringUtils.transformationDirection(strSource, "/", "-");
+        String s2 = StringUtils.transformationDirection(s1, ".", "-");
+        s2=StringUtils.stringFilter(s2);
+        return s2;
+    }
+
+    /*
+    * @Description: 金额删除逗号(9)
+    * @param: [strSource]
+    * @return: java.lang.Double
+    * @author:Dxx
+    * @Date: 2018/12/20 12:14
+    */
+    public static String amountDeleteComma(String strSource){
+        String s1 = StringUtils.transformationDirection(strSource, ",", "");
+        String s2 = StringUtils.transformationDirection(s1, "，", "");
+        return s2;
+    }
+    /*
+    * @Description: 删除+号 (16)
+    * @param: [string]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/20 13:32
+    */
+    public static String deletePlus(String string){
+        return StringUtils.isNotEmpty(string) ? string.replace("+",""):string;
+    }
+    /*
+    * @Description: 删除-号 (15)
+    * @param: [string]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/20 13:51
+    */
+    public static String deleteMinus(String string){
+        return StringUtils.isNotEmpty(string) ? string.replace("-",""):string;
+    }
+
+    /*
+    * @Description: 判断是否是整数，不是整数返回'0' (7)
+    * @param: [string]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/20 14:11
+    */
+    public static String isNumeric(String string){
+        return StringUtils.isNumeric(string)?string:"null";
+    }
+
+    public static void main(String[] args) throws ParseException {
+        System.out.println(deleteSpace(" .09 0% "));
+        System.out.println(deleteAllSpace(" .09 0% "));
+        System.out.println(deletePercentSign(".090%"));
+        System.out.println(deletePercentSign(" .0 @@@9 0"));
+        System.out.println(deleteSpecialCharacters("1a阿姨……%……&*（——）————————（*&……%￥#￥%……&*（“？》”}：《》"));
+        System.out.println(deleteZero("10000y1324以"));
+        System.out.println(dateFormatCleaning("11989-12/12.22112"));
+        System.out.println(dateFormatCleaning(""));
+        System.out.println(amountDeleteComma("199,99，9099"));
+        System.out.println(deleteMinus("+++++------789789789"));
+        System.out.println(deletePlus("+++++------789789789"));
+        System.out.println(isNumeric("jfldsajklf"));
+        System.out.println(isNumeric("-12435678"));
+        System.out.println(isNumeric("+12435.678"));
+    }
+}

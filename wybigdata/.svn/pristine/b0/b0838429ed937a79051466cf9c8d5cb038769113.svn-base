@@ -1,0 +1,120 @@
+package com.dfwy.online.sparkstreamingtask.business.basics;
+
+import com.dfwy.online.sparkstreamingtask.business.calculation.IdeQuotasCalcuBusiService;
+import com.dfwy.online.sparkstreamingtask.dao.IdeQuotasReadDao;
+import com.dfwy.online.sparkstreamingtask.dao.IdeQuotasWriteDao;
+import common.pojo.applicantinformation.ApplicantInformationTO;
+import common.pojo.quotas.QuotasDataValueEntity;
+import common.pojo.quotas.QuotasEntity;
+import com.dfwy.online.sparkstreamingtask.vcloude.task.QuotasTask;
+import common.utils.collection.CollectionUtils;
+import common.utils.exception.ErrorCodeIDE;
+import common.utils.exception.ServiceException;
+import common.utils.object2map.MapObjUtil;
+import common.utils.sqlsessionfactoryutil.SqlSessionFactoryUtil;
+import common.utils.uuid.UUIDGenerator;
+import org.apache.ibatis.session.SqlSession;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @author: dxx
+ * @version: V-Cloude
+ * @date: 2018/12/3 17:43
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ * @file_name: wybigdata
+ * @pachage_name: com.dfwy.online.sparkstreamingtask.business.BackUp.basics
+ * @description:
+ */
+public class IdeQuotasBusiServiceImpl implements IdeQuotasBusiService {
+
+    private IdeQuotasCalcuBusiService ideQuotasCalcuBusiService;
+
+    @Override
+    public Vector<QuotasDataValueEntity> execQuotas(ApplicantInformationTO applicantInformationTO, String execStage, String execPri) throws ServiceException {
+        //定义指标真实值变量数组---MySql《指标真实值信息表》
+        Vector<QuotasDataValueEntity> dataValueList=new Vector<QuotasDataValueEntity>();
+
+        try {
+            // 申请人申请信息转为Map集合
+            Map<String, Object> map = MapObjUtil.object2Map(applicantInformationTO);
+            if (map.get("reqID") == null || "".equals(map.get("reqID"))) {
+                throw new ServiceException(ErrorCodeIDE.IdengineQuotas.PARAM_QUOTAS_ERROR + ",reqID为空");
+            }
+            // 指标基础信息实体类---指标计算数据的来源类
+            QuotasEntity quotasEntity = new QuotasEntity();
+            // 指标计算有优先级和阶段性的区分，在这里传入此两个参数，以做区分；
+            // 同时，将申请人申请银行编号和申请产品代码存入，以作指标计算规格区分标志。
+            quotasEntity.setExecStage(execStage);
+            quotasEntity.setExecPri(execPri);
+            quotasEntity.setProductCode(applicantInformationTO.getProductCode());
+            quotasEntity.setBankNo(applicantInformationTO.getBankNo());
+            //进入指标处理阶段
+            dataValueList = parallelExecQuotas(map, quotasEntity);
+        } catch (Exception e) {
+            e.printStackTrace();
+            /*throw new ServiceException(ErrorCodeIDE.IdengineQuotas.EXEC_QUOTAS_ERROR
+                    + ",执行指标SQL异常"
+                    + System.getProperty("line.separator")
+                    , e);*/
+        }
+        return dataValueList;
+    }
+
+    private Vector<QuotasDataValueEntity> parallelExecQuotas(Map<String, Object> map, QuotasEntity quotasEntity) throws InterruptedException {
+        // 一、查询指标基础信息
+        // 构建SqlSession单例和加载接口类映射
+        SqlSession sqlSession = SqlSessionFactoryUtil.openSqlSession();
+        IdeQuotasReadDao ideQuotasReadDao = sqlSession.getMapper(IdeQuotasReadDao.class);
+        // 根据"指标基础信息实体类"中信息，获取指标计算的规则，并封装进List<QuotasEntity> quotasList之中
+        List<QuotasEntity> quotasList = ideQuotasReadDao.find(quotasEntity);
+        if (CollectionUtils.isEmpty(quotasList)) {
+            throw new ServiceException(ErrorCodeIDE.IdengineQuotas.SELECT_QUOTAS_ERROR + ",quotasSql为空");
+        }
+        // 二、执行指标计算规则并获得指标计算值
+        // 定义指标真实值变量数组---MySql《指标真实值信息表》
+        Vector<QuotasDataValueEntity> dataValueList = new Vector<QuotasDataValueEntity>();
+        // 多线程执行程序指标计算sql
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 5, 200, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>());
+        CountDownLatch latch = new CountDownLatch(quotasList.size());
+        for (QuotasEntity quotas : quotasList) {
+            String uuid = UUIDGenerator.generate();
+            QuotasTask quotasTask = new QuotasTask(quotas, dataValueList, map, ideQuotasReadDao, latch,
+                    ideQuotasCalcuBusiService, uuid);
+            executor.execute(quotasTask);
+        }
+        latch.await();
+        executor.shutdown();
+        sqlSession.close();
+        // 打印指标数量
+        System.out.println("dataValueList.size():" + dataValueList.size());
+        // 三、插入指标计算结果到MySql《指标真实值信息表》
+        //插入指标真实值表,由于以上多线使用sqlSession的问题，会造成再使用sqlSession时出现问题，
+        //所以，重新建立SqlSession来进行数据的插入
+        SqlSession sqlSessionInsert = SqlSessionFactoryUtil.openSqlSession();
+        IdeQuotasWriteDao ideQuotasWriteDao = sqlSessionInsert.getMapper(IdeQuotasWriteDao.class);
+        try {
+            // 数据插入到MySql数据库
+            ideQuotasWriteDao.inserQuotasDataValueList(dataValueList);
+            sqlSessionInsert.commit();
+        } catch (Exception e) {
+            sqlSessionInsert.rollback();
+            e.printStackTrace();
+            /*throw new ServiceException(ErrorCodeIDE.VCloudeSpark.Sql_Insert_ERROR
+                    + ",指标真实值插入失败！"
+                    + System.getProperty("line.separator")
+                    , e);*/
+        } finally {
+            sqlSessionInsert.close();
+        }
+        // 回返指标真实值表
+        return dataValueList;
+    }
+}

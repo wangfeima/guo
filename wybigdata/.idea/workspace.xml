@@ -1,0 +1,1680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ff14b1d9-44d9-49a0-bd3b-9ad07c648ecb" name="2018.12.23" comment="Hbase数据库入库成功！">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/Producer/a123.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/Producer/b123.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.class" afterPath="$PROJECT_DIR$/target/classes/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/common/constant/Constants.class" afterPath="$PROJECT_DIR$/target/classes/common/constant/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/common/utils/hbase/HBaseUtils.class" afterPath="$PROJECT_DIR$/target/classes/common/utils/hbase/HBaseUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/BackUp/JavaKafkaConsumer.class" afterPath="$PROJECT_DIR$/target/test-classes/BackUp/JavaKafkaConsumer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/JsonParse/R1103.class" afterPath="$PROJECT_DIR$/target/test-classes/JsonParse/R1103.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Producer/SendDataToKafka$1.class" afterPath="$PROJECT_DIR$/target/test-classes/Producer/SendDataToKafka$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Producer/SendDataToKafka.class" afterPath="$PROJECT_DIR$/target/test-classes/Producer/SendDataToKafka.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbutils_commons_dbutils_1_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbutils_commons_dbutils_1_6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_py4j_py4j_0_10_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_py4j_py4j_0_10_7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_5_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_api_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_api_1_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_json_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_json_1_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_clients_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_clients_1_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_streams_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_streams_1_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_orc_orc_core_nohive_1_4_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_orc_orc_core_nohive_1_4_4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_orc_orc_mapreduce_nohive_1_4_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_orc_orc_mapreduce_nohive_1_4_4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_column_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_column_1_8_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_common_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_common_1_8_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_encoding_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_encoding_1_8_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_hadoop_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_hadoop_1_8_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_jackson_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_parquet_parquet_jackson_1_8_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_catalyst_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_catalyst_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_core_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_core_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_kvstore_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_kvstore_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_launcher_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_launcher_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_network_common_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_network_common_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_network_shuffle_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_network_shuffle_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_sketch_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_sketch_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_sql_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_sql_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_streaming_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_streaming_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_streaming_kafka_0_10_assembly_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_streaming_kafka_0_10_assembly_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_tags_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_tags_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_unsafe_2_11_2_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_spark_spark_unsafe_2_11_2_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java" afterPath="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/common/constant/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/common/constant/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/sqlmapconfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/sqlmapconfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/BackUp/JavaKafkaConsumer.java" afterPath="$PROJECT_DIR$/src/test/java/BackUp/JavaKafkaConsumer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/JsonParse/R1103.java" afterPath="$PROJECT_DIR$/src/test/java/JsonParse/R1103.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Producer/SendDataToKafka.java" afterPath="$PROJECT_DIR$/src/test/java/Producer/SendDataToKafka.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/dfwy/online/sparkstreamingtask/dao/IdeQuotasWriteDao.xml" afterPath="$PROJECT_DIR$/target/classes/com/dfwy/online/sparkstreamingtask/dao/IdeQuotasWriteDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sqlmapconfig.xml" afterPath="$PROJECT_DIR$/target/classes/sqlmapconfig.xml" />
+    </list>
+    <list readonly="true" id="c8558950-9e09-4fb5-b249-42bdf00091e1" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="CommittedChangesCache">
+    <option name="refreshEnabled" value="true" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/wybigdata$R1103_beanTest.coverage" NAME="R1103.beanTest Coverage Results" MODIFIED="1543906422973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>JsonParse.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SendDataToKafka.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Producer/SendDataToKafka.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="32" column="44" lean-forward="false" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="a123.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Producer/a123.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="b123.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Producer/b123.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/constant/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaDirectKafkaAnalyze.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1546781918707" expanded="true" signature="4318:7538" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="mapper" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>deletePercentSign</find>
+      <find>quan</find>
+      <find>ccxE</find>
+      <find>etlCleanStdLegalDataStructured</find>
+      <find>&quot;ccxData&quot;</find>
+      <find>columnFamily</find>
+      <find>execQuotas</find>
+      <find>dataValueEntity</find>
+      <find>QuotasDataValueEntity</find>
+      <find>cardnum</find>
+      <find>ancheyear</find>
+      <find>Dfwybank_VCloude_Hbase_Zookeeper_Quorum</find>
+      <find>Dfwybank_VCloude_BusinessJustice_Http_Topic</find>
+      <find>put.add</find>
+      <find>put</find>
+      <find>prop</find>
+      <find>conn</find>
+      <find>Formatter</find>
+      <find>public static SimpleDateFormat formatter = new SimpleDateFormat(pattern);</find>
+      <find>formatter</find>
+      <find>SimpleDateFormat formatter = new SimpleDateFormat(pattern);</find>
+      <find>delete</find>
+      <find>19</find>
+      <find>删除特殊字符</find>
+      <find>18</find>
+      <find>Dfwybank_VCloude_BusinessJustice_JSON_Topic</find>
+      <find>(18)</find>
+      <find>(19)</find>
+      <find>kafka</find>
+      <find>org.apache.kafka.common.serialization.StringDeserializer</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>:</replace>
+      <replace>double</replace>
+      <replace>uuid</replace>
+      <replace>ID</replace>
+      <replace>ID;</replace>
+      <replace>sID</replace>
+      <replace>qID</replace>
+      <replace>DateFormatCleaning</replace>
+      <replace>uID</replace>
+      <replace>m.uuID</replace>
+      <replace>setUuID</replace>
+      <replace>datasourcefrom</replace>
+      <replace>Datasourcefrom</replace>
+      <replace>dataSourceFrom</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\JavaSupport\Vcloude\wybigdata</dir>
+      <dir>D:\JavaSupport\Vcloude\wybigdata\src\main\java</dir>
+    </dirStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask4.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask5.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask6.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask7.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask8.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask9.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask20.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask21.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask22.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask23.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask10.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask11.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask12.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask13.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask14.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask15.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask16.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask17.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask18.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/etlTask19.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/ThreadTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntBasicList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/SendDataToKafka.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/KafkaConsumer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/threadutilstest/sparkStreamingkafka.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/offline/R1103.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/offline/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/hbase/HBaseUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/hbase/HBaseOperater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/stringutils/StringUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/ElementsCreditETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/CCXETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/date/DateUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/AmarsoftETLInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/STtest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/etlclean/EtlCleanRules.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/IdeQuotasWriteDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/common/utils/sqlsessionfactoryutil/SqlSessionFactoryUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/business/basics/IdeQuotasBusiServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Producer/SendDataToKafka.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/sqlmapconfig.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/JsonParse/R1103.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/BackUp/JavaKafkaConsumer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/a123.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/b123.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/constant/Constants.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Producer/b123.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Producer/a123.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Java/apache-maven-3.2.1" />
+        <option name="userSettingsFile" value="D:\Java\apache-maven-3.2.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wybigdata" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wybigdata" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="281" />
+    <option name="y" value="348" />
+    <option name="width" value="455" />
+    <option name="height" value="384" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Data flow issuesJava</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="wybigdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wybigdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
+    <property name="settings.editor.splitter.proportion" value="0.23789649" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\com\dfwy\online\sparkstreamingtask\vcloude\task\etlclean" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\test\java\threadutilstest" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\test\java" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\common\utils" />
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\common\utils\commonutil" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dfwy.offline" />
+      <recent name="threadutilstest" />
+      <recent name="common.pojo.etlstandardtable" />
+      <recent name="com.dfwy.online.sparkstreamingtask.dao" />
+      <recent name="Producer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaSupport\Vcloude\CheckOut\wybigdata\src\main\java\com\dfwy\online\sparkstreamingtask\vcloude\task\sfanalysis" />
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\java\com\dfwy\online\sparkstreamingtask\dao" />
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\java\com\dfwy\online\sparkstreamingtask\UserMapper.xml" />
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\resources" />
+      <recent name="D:\JavaSupport\Vcloude\wybigdata\src\main\resources\mapper" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.a123.aVoid">
+    <configuration name="EtlCleanRules" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="common.utils.etlclean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="common.utils.etlclean.EtlCleanRules" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <configuration name="JavaDirectKafkaAnalyze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.dfwy.online.sparkstreamingtask.vcloude.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.dfwy.online.sparkstreamingtask.vcloude.main.JavaDirectKafkaAnalyze" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <configuration name="SendDataToKafka" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Producer.SendDataToKafka" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="a123" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Producer.a123" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <configuration name="a123.aVoid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="wybigdata" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Producer" />
+      <option name="MAIN_CLASS_NAME" value="Producer.a123" />
+      <option name="METHOD_NAME" value="aVoid" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="b123" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Producer.b123" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="wybigdata" />
+      <envs />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Application.EtlCleanRules" />
+      <item index="1" class="java.lang.String" itemvalue="Application.JavaDirectKafkaAnalyze" />
+      <item index="2" class="java.lang.String" itemvalue="Application.SendDataToKafka" />
+      <item index="3" class="java.lang.String" itemvalue="Application.a123" />
+      <item index="4" class="java.lang.String" itemvalue="Application.b123" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.a123.aVoid" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.a123.aVoid" />
+        <item index="1" class="java.lang.String" itemvalue="Application.b123" />
+        <item index="2" class="java.lang.String" itemvalue="Application.a123" />
+        <item index="3" class="java.lang.String" itemvalue="Application.SendDataToKafka" />
+        <item index="4" class="java.lang.String" itemvalue="Application.JavaDirectKafkaAnalyze" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" myAutoUpdateAfterCommit="true" cleanupOnStartRun="true">
+    <configuration useDefault="false">C:\Users\User\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+    <option name="runUnderTerminal" value="true" />
+    <option name="UPDATE_DEPTH" value="infinity" />
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+          <option name="myCopyRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata\.idea" />
+          <option name="myCopyRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata\.idea" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+          <option name="myCopyRoot" value="D:\JavaSupport\Vcloude\CheckOut\wybigdata" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8558950-9e09-4fb5-b249-42bdf00091e1" name="Default" comment="" />
+      <created>1543286557123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545009631618</updated>
+      <workItem from="1543286560129" duration="16334000" />
+      <workItem from="1543328939768" duration="2660000" />
+      <workItem from="1543366664863" duration="27915000" />
+      <workItem from="1543415350013" duration="105000" />
+      <workItem from="1543453969701" duration="27742000" />
+      <workItem from="1543538471297" duration="14548000" />
+      <workItem from="1543720124770" duration="30000" />
+      <workItem from="1543725916411" duration="494000" />
+      <workItem from="1543743788093" duration="2681000" />
+      <workItem from="1543746533633" duration="8252000" />
+      <workItem from="1543762227136" duration="2340000" />
+      <workItem from="1543798208361" duration="18645000" />
+      <workItem from="1543885063079" duration="17562000" />
+      <workItem from="1543915839548" duration="6758000" />
+      <workItem from="1543933518260" duration="916000" />
+      <workItem from="1543971133833" duration="28487000" />
+      <workItem from="1544057644846" duration="24266000" />
+      <workItem from="1544150860943" duration="18948000" />
+      <workItem from="1544274585652" duration="1490000" />
+      <workItem from="1544319687512" duration="6585000" />
+      <workItem from="1544356141691" duration="5033000" />
+      <workItem from="1544404853368" duration="22917000" />
+      <workItem from="1544489326034" duration="28866000" />
+      <workItem from="1544578023904" duration="28012000" />
+      <workItem from="1544662679709" duration="12299000" />
+      <workItem from="1544680715538" duration="15088000" />
+      <workItem from="1544702893630" duration="4159000" />
+      <workItem from="1544748935853" duration="16435000" />
+      <workItem from="1544834831333" duration="2466000" />
+      <workItem from="1544930274482" duration="5489000" />
+      <workItem from="1544952478899" duration="3635000" />
+      <workItem from="1544969762913" duration="652000" />
+      <workItem from="1545007891742" duration="1738000" />
+      <workItem from="1545738801074" duration="750000" />
+      <workItem from="1545786786330" duration="11809000" />
+      <workItem from="1545813429429" duration="4517000" />
+      <workItem from="1545871840858" duration="32997000" />
+      <workItem from="1545960164756" duration="24784000" />
+      <workItem from="1545998214883" duration="1213000" />
+      <workItem from="1546044590569" duration="25683000" />
+      <workItem from="1546315666180" duration="2871000" />
+      <workItem from="1546323135960" duration="2154000" />
+      <workItem from="1546390403640" duration="33113000" />
+      <workItem from="1546441927654" duration="2108000" />
+      <workItem from="1546477074675" duration="18465000" />
+      <workItem from="1546562804876" duration="25966000" />
+      <workItem from="1546695990908" duration="1856000" />
+      <workItem from="1546743380963" duration="5045000" />
+      <workItem from="1546750781042" duration="5397000" />
+      <workItem from="1546758601832" duration="8330000" />
+      <workItem from="1546833408667" duration="22000" />
+    </task>
+    <task id="LOCAL-00041" summary="2018.12.17">
+      <created>1545394204921</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1545394204921</updated>
+    </task>
+    <task id="LOCAL-00042" summary="2018.12.17">
+      <created>1545394723614</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1545394723614</updated>
+    </task>
+    <task id="LOCAL-00043" summary="R227、R228、R229、R230、R231报文格式有变化，形成了jsonArray模式，所有，我在这里更改了入库程序">
+      <created>1545395149032</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1545395149032</updated>
+    </task>
+    <task id="LOCAL-00044" summary="测试R227程序">
+      <created>1545395291990</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1545395291990</updated>
+    </task>
+    <task id="LOCAL-00045" summary="数据库部分字段数据编程了Datetime  所以，对象要改成Date">
+      <created>1545473124518</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1545473124518</updated>
+    </task>
+    <task id="LOCAL-00046" summary="添加了数据来源成员变量">
+      <created>1545473156133</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1545473156133</updated>
+    </task>
+    <task id="LOCAL-00047" summary="添加数据来源程序">
+      <created>1545475839474</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1545475839474</updated>
+    </task>
+    <task id="LOCAL-00048" summary="2018.12.17">
+      <created>1545484046820</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1545484046820</updated>
+    </task>
+    <task id="LOCAL-00049" summary="添加了元素、中诚信、安硕数据分别存入HBASE">
+      <created>1545485936318</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1545485936318</updated>
+    </task>
+    <task id="LOCAL-00050" summary="增加了元素和中诚信的常量">
+      <created>1545485978987</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1545485978988</updated>
+    </task>
+    <task id="LOCAL-00051" summary="中诚信、元素报文解析">
+      <created>1545614371561</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614371561</updated>
+    </task>
+    <task id="LOCAL-00052" summary="修改类名，以标注为安硕同元素、中诚信区分">
+      <created>1545614463380</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614463380</updated>
+    </task>
+    <task id="LOCAL-00053" summary="修改了两个bug:去除%和isNumber两个方法的小bug">
+      <created>1545614540139</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614540140</updated>
+    </task>
+    <task id="LOCAL-00054" summary="元素征信的测试文件">
+      <created>1545614597699</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1545614597700</updated>
+    </task>
+    <task id="LOCAL-00055" summary="元素、中诚信、安硕数据解析入标准库统一代码">
+      <created>1545617983094</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1545617983095</updated>
+    </task>
+    <task id="LOCAL-00056">
+      <created>1545618168548</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618168548</updated>
+    </task>
+    <task id="LOCAL-00057">
+      <created>1545618257083</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618257083</updated>
+    </task>
+    <task id="LOCAL-00058" summary="2018.12.17">
+      <created>1545618296848</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618296848</updated>
+    </task>
+    <task id="LOCAL-00059" summary="isNumeric把浮点数结构给忘记了，所以，加上小数点“.”。">
+      <created>1545618402162</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618402162</updated>
+    </task>
+    <task id="LOCAL-00060">
+      <created>1545618507447</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1545618507448</updated>
+    </task>
+    <task id="LOCAL-00061" summary="司法解析">
+      <created>1545639584091</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1545639584091</updated>
+    </task>
+    <task id="LOCAL-00062" summary="司法解析">
+      <created>1545639620759</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1545639620759</updated>
+    </task>
+    <task id="LOCAL-00063" summary="司法解析">
+      <created>1545639714715</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1545639714715</updated>
+    </task>
+    <task id="LOCAL-00064" summary="在加入了司法解析之后，重新构造了程序结构">
+      <created>1545644701939</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1545644701939</updated>
+    </task>
+    <task id="LOCAL-00065" summary="private String casecreatetime;   --&gt;  private Date casecreatetime;&#10;private Date createtime;     --&gt;  private String createtime;">
+      <created>1545717581934</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1545717581935</updated>
+    </task>
+    <task id="LOCAL-00066" summary="更改数据信息Casecreatetime和Createtime的成员变量属性">
+      <created>1545717687222</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1545717687222</updated>
+    </task>
+    <task id="LOCAL-00067" summary="createtime更改为String数据类型">
+      <created>1545723333335</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1545723333335</updated>
+    </task>
+    <task id="LOCAL-00068" summary="测试花费了12909ms">
+      <created>1545723784581</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1545723784581</updated>
+    </task>
+    <task id="LOCAL-00069">
+      <created>1545723827084</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1545723827084</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Cardnnum的修改，之前是Cardnum">
+      <created>1545739435591</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1545739435592</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Cardnnum,之前是Cardnum">
+      <created>1545739469730</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1545739469730</updated>
+    </task>
+    <task id="LOCAL-00072">
+      <created>1545739532286</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1545739532286</updated>
+    </task>
+    <task id="LOCAL-00073" summary="SimpleDateFormat线程不安全！">
+      <created>1545806362348</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1545806362350</updated>
+    </task>
+    <task id="LOCAL-00074" summary="更改了注释和异常的抛出工作">
+      <created>1545826526326</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1545826526327</updated>
+    </task>
+    <task id="LOCAL-00075">
+      <created>1545826549408</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1545826549408</updated>
+    </task>
+    <task id="LOCAL-00076" summary="stdEntBasicList.setAncheyear(EtlCleanRules.dateFormatCleaning(basicObject.getString(&quot;ancheYear&quot;)));&#10;这个对象的anYear字段从Date编程String">
+      <created>1545873418241</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1545873418242</updated>
+    </task>
+    <task id="LOCAL-00077" summary="private Date ancheyear更改为private String ancheyear;">
+      <created>1545874329923</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1545874329924</updated>
+    </task>
+    <task id="LOCAL-00078" summary="2016-07-13 00:00:00">
+      <created>1545995132112</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1545995132113</updated>
+    </task>
+    <task id="LOCAL-00079" summary="2016-07-13 00:00:00">
+      <created>1545995173519</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1545995173519</updated>
+    </task>
+    <task id="LOCAL-00080">
+      <created>1545995202066</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1545995202066</updated>
+    </task>
+    <task id="LOCAL-00081" summary="2016-07-13 00:00:00">
+      <created>1545997428888</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1545997428888</updated>
+    </task>
+    <task id="LOCAL-00082" summary="SimpleDateFormat formatter = new SimpleDateFormat(pattern);&#10;由于SimpleDateFormat非线程安全，所以在调用DateUtils时，多线程是不能共享一个静态变量的&#10;所以，需要每个线程一个SimpleDateFormat对象！">
+      <created>1545997913191</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1545997913191</updated>
+    </task>
+    <task id="LOCAL-00083">
+      <created>1545997941574</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1545997941574</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Hbase数据库入库成功！">
+      <created>1545998922764</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1545998922765</updated>
+    </task>
+    <task id="LOCAL-00085" summary="配置本地无线网IP地址">
+      <created>1546064646728</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1546064646729</updated>
+    </task>
+    <task id="LOCAL-00086">
+      <created>1546076761829</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1546076761829</updated>
+    </task>
+    <task id="LOCAL-00087">
+      <created>1546076787724</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1546076787725</updated>
+    </task>
+    <task id="LOCAL-00088" summary="指标真实值insert程序修改">
+      <created>1546478659928</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1546478659929</updated>
+    </task>
+    <task id="LOCAL-00089" summary="司法解析将sqlSession关闭！">
+      <created>1546478967575</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1546478967575</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
+    <option name="trackContextForNewChangelist" value="true" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="R1103_localTest - 2019.01.02 at 23h 25m 18s.xml">
+      <configuration name="R1103.localTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_localTest - 2019.01.02 at 23h 29m 13s.xml">
+      <configuration name="R1103.localTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_localTest - 2019.01.02 at 23h 46m 47s.xml">
+      <configuration name="R1103.localTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_localTest - 2019.01.04 at 15h 35m 39s.xml">
+      <configuration name="R1103.localTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_localTest - 2019.01.06 at 13h 25m 07s.xml">
+      <configuration name="R1103.localTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="R1103_localTest - 2019.01.06 at 21h 25m 29s.xml">
+      <configuration name="R1103.localTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="a123_aVoid - 2019.01.06 at 22h 00m 57s.xml">
+      <configuration name="a123.aVoid" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="a123_aVoid - 2019.01.06 at 22h 10m 39s.xml">
+      <configuration name="a123.aVoid" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="a123_aVoid - 2019.01.06 at 22h 10m 42s.xml">
+      <configuration name="a123.aVoid" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="a123_aVoid - 2019.01.06 at 22h 12m 48s.xml">
+      <configuration name="a123.aVoid" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="822262000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-4" y="-4" width="1374" height="776" extended-state="7" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53669727" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6299694" sideWeight="0.34063444" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45241693" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68654436" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8287462" sideWeight="0.65936553" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22507553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48470947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41284403" sideWeight="0.4705438" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="584" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5856269" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6299694" sideWeight="0.34063444" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.559633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53669727" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5259939" sideWeight="0.4705438" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="584" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6116208" sideWeight="0.65936553" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74006116" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2666163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5856269" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改类名，以标注为安硕同元素、中诚信区分" />
+    <MESSAGE value="修改了两个bug:去除%和isNumber两个方法的小bug" />
+    <MESSAGE value="元素征信的测试文件" />
+    <MESSAGE value="元素、中诚信、安硕数据解析入标准库统一代码" />
+    <MESSAGE value="2018.12.17" />
+    <MESSAGE value="isNumeric把浮点数结构给忘记了，所以，加上小数点“.”。" />
+    <MESSAGE value="司法解析" />
+    <MESSAGE value="在加入了司法解析之后，重新构造了程序结构" />
+    <MESSAGE value="private String casecreatetime;   --&gt;  private Date casecreatetime;&#10;private Date createtime;     --&gt;  private String createtime;" />
+    <MESSAGE value="更改数据信息Casecreatetime和Createtime的成员变量属性" />
+    <MESSAGE value="createtime更改为String数据类型" />
+    <MESSAGE value="测试花费了12909ms" />
+    <MESSAGE value="Cardnnum的修改，之前是Cardnum" />
+    <MESSAGE value="Cardnnum,之前是Cardnum" />
+    <MESSAGE value="SimpleDateFormat线程不安全！" />
+    <MESSAGE value="更改了注释和异常的抛出工作" />
+    <MESSAGE value="createtime和" />
+    <MESSAGE value="stdEntBasicList.setAncheyear(EtlCleanRules.dateFormatCleaning(basicObject.getString(&quot;ancheYear&quot;)));&#10;这个对象的anYear字段从Date编程String" />
+    <MESSAGE value="private Date ancheyear更改为private String ancheyear;" />
+    <MESSAGE value="2016-07-13 00:00:00" />
+    <MESSAGE value="SimpleDateFormat formatter = new SimpleDateFormat(pattern);&#10;由于SimpleDateFormat非线程安全，所以在调用DateUtils时，多线程是不能共享一个静态变量的&#10;所以，需要每个线程一个SimpleDateFormat对象！" />
+    <MESSAGE value="Hbase数据库入库成功！" />
+    <MESSAGE value="配置本地无线网IP地址" />
+    <MESSAGE value="指标真实值insert程序修改" />
+    <MESSAGE value="司法解析将sqlSession关闭！" />
+    <option name="LAST_COMMIT_MESSAGE" value="司法解析将sqlSession关闭！" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="CHANGE_BROWSER_SETTINGS">
+      <map>
+        <entry key="svn">
+          <value>
+            <ChangeBrowserSettings />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="145" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="dataValueList" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/SendDataToKafka.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="27" column="53" lean-forward="false" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/EtlCleanRules.java" />
+    <entry file="file://$USER_HOME$/Downloads/AmarsoftETLInsertData.java" />
+    <entry file="file://$USER_HOME$/Downloads/CCXETLInsertData.java" />
+    <entry file="file://$USER_HOME$/Downloads/ElementsCreditETLInsertData.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/CCXETLInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="1106" column="2" lean-forward="false" selection-start-line="1106" selection-start-column="2" selection-end-line="1106" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/pojo/etlstandardtable/StdEntSharesfrostList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/date/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="159" column="14" lean-forward="true" selection-start-line="159" selection-start-column="14" selection-end-line="159" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/stringutils/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="386" column="25" lean-forward="false" selection-start-line="386" selection-start-column="25" selection-end-line="386" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/http/HttpRequestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="65" column="46" lean-forward="true" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/SendHttpMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/kafka/KafkaConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="72" column="35" lean-forward="false" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BackUp/JavaDirectKafkaAnalyze2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/STtest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/AmarsoftETLInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/etlclean/EtlCleanRules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5550">
+          <caret line="108" column="16" lean-forward="false" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudgeAnalysisTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="31" column="78" lean-forward="true" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/etlclean/ElementsCreditETLInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="230" column="13" lean-forward="true" selection-start-line="230" selection-start-column="13" selection-end-line="230" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/JudgeAnynasisWriteDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/IdeQuotasWriteDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.8/mybatis-3.2.8-sources.jar!/org/apache/ibatis/session/SqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="204" column="7" lean-forward="false" selection-start-line="204" selection-start-column="7" selection-end-line="204" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.8/mybatis-3.2.8-sources.jar!/org/apache/ibatis/session/SqlSessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.8/mybatis-3.2.8-sources.jar!/org/apache/ibatis/session/SqlSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/quotas/QuotasTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-706">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/JudicialAnalysisImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/dao/IdeQuotasWriteDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <marker date="1546435136469" expanded="true" signature="321:458" ph="insert into ide_quotas_data_value... " />
+            <marker date="1546435136469" expanded="true" signature="1336:2312" ph="insert into ide_QUOTAS... " />
+            <marker date="1546435136469" expanded="true" signature="1579:2312" ph="select A.* f... QUOTAS_ID" />
+            <marker date="1546435136469" expanded="true" signature="1694:2280" ph="SELECT ##{ite... dual" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/sfanalysis/JudicialAnalysisImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2145">
+          <caret line="138" column="18" lean-forward="false" selection-start-line="138" selection-start-column="18" selection-end-line="138" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/sqlsessionfactoryutil/SqlSessionFactoryUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/business/basics/IdeQuotasBusiServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="58" column="66" lean-forward="true" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/business/basics/IdeQuotasBusiService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/jdbc/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/utils/hbase/HBaseUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="31" column="71" lean-forward="false" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="286" column="0" lean-forward="false" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunBefores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BackUp/JavaKafkaConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/task/hbase/HBaseOperater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/JsonParse/R227R228R229R230R231.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="67" column="5" lean-forward="false" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/JsonParse/R1103.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="83" column="25" lean-forward="true" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sqlmapconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Producer/SendDataToKafka.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="32" column="44" lean-forward="false" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Producer/b123.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Producer/a123.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/constant/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dfwy/online/sparkstreamingtask/vcloude/main/JavaDirectKafkaAnalyze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1546781918707" expanded="true" signature="4318:7538" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>wybigdata</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.4510345" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:druid:1.0.9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,241 @@
+package common.pojo.etlstandardtable;
+
+import java.util.Date;
+
+/**
+ * @description:
+ * @author: Wfm
+ * Date: 2018/12/18 0018 14:58
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ */
+public class StdLegalIndUnexecuted {
+
+
+    private String uuID;
+    private String reqID;
+    private String businessID;
+    private String ID;
+    private String INAME;
+    private String AGE;
+    private String SEXY;
+    private String CARDNUM;
+    private String CASECODE;
+    private String COURTNAME;
+    private String AREANAME;
+    private String GISTID;
+    private String REGDATE;
+    private String GISTUNIT;
+    private String PERFORMANCE;
+    private String DISRUPTTYPENAME;
+    private String DUTY;
+    private String PUBLISHDATE;
+    private String INPUTTIME;
+    private String UPDATETIME;
+    private String CREATETIME;
+
+
+    public String getUuID() {
+        return uuID;
+    }
+
+    public void setUuID(String uuID){
+        this.uuID = uuID == null ? null : uuID.trim();
+    }
+
+    public String getReqID() {
+        return reqID;
+    }
+
+    public void setReqID(String reqID){
+        this.reqID = reqID == null ? null : reqID.trim();
+    }
+
+    public String getBusinessID() {
+        return businessID;
+    }
+
+    public void setBusinessID(String businessID){
+        this.businessID = businessID == null ? null : businessID.trim();
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID){
+        this.ID = ID == null ? null : ID.trim();
+    }
+
+    public String getINAME() {
+        return INAME;
+    }
+
+    public void setINAME(String INAME){
+        this.INAME = INAME == null ? null : INAME.trim();
+    }
+
+    public String getAGE() {
+        return AGE;
+    }
+
+    public void setAGE(String AGE){
+        this.AGE = AGE == null ? null : AGE.trim();
+    }
+
+    public String getSEXY() {
+        return SEXY;
+    }
+
+    public void setSEXY(String SEXY){
+        this.SEXY = SEXY == null ? null : SEXY.trim();
+    }
+
+    public String getCARDNUM() {
+        return CARDNUM;
+    }
+
+    public void setCARDNUM(String CARDNUM){
+        this.CARDNUM = CARDNUM == null ? null : CARDNUM.trim();
+    }
+
+    public String getCASECODE() {
+        return CASECODE;
+    }
+
+    public void setCASECODE(String CASECODE){
+        this.CASECODE = CASECODE == null ? null : CASECODE.trim();
+    }
+
+    public String getCOURTNAME() {
+        return COURTNAME;
+    }
+
+    public void setCOURTNAME(String COURTNAME){
+        this.COURTNAME = COURTNAME == null ? null : COURTNAME.trim();
+    }
+
+    public String getAREANAME() {
+        return AREANAME;
+    }
+
+    public void setAREANAME(String AREANAME){
+        this.AREANAME = AREANAME == null ? null : AREANAME.trim();
+    }
+
+    public String getGISTID() {
+        return GISTID;
+    }
+
+    public void setGISTID(String GISTID){
+        this.GISTID = GISTID == null ? null : GISTID.trim();
+    }
+
+    public String getREGDATE() {
+        return REGDATE;
+    }
+
+    public void setREGDATE(String REGDATE){
+        this.REGDATE = REGDATE == null ? null : REGDATE.trim();
+    }
+
+    public String getGISTUNIT() {
+        return GISTUNIT;
+    }
+
+    public void setGISTUNIT(String GISTUNIT){
+        this.GISTUNIT = GISTUNIT == null ? null : GISTUNIT.trim();
+    }
+
+    public String getPERFORMANCE() {
+        return PERFORMANCE;
+    }
+
+    public void setPERFORMANCE(String PERFORMANCE){
+        this.PERFORMANCE = PERFORMANCE == null ? null : PERFORMANCE.trim();
+    }
+
+    public String getDISRUPTTYPENAME() {
+        return DISRUPTTYPENAME;
+    }
+
+    public void setDISRUPTTYPENAME(String DISRUPTTYPENAME){
+        this.DISRUPTTYPENAME = DISRUPTTYPENAME == null ? null : DISRUPTTYPENAME.trim();
+    }
+
+    public String getDUTY() {
+        return DUTY;
+    }
+
+    public void setDUTY(String DUTY){
+        this.DUTY = DUTY == null ? null : DUTY.trim();
+    }
+
+    public String getPUBLISHDATE() {
+        return PUBLISHDATE;
+    }
+
+    public void setPUBLISHDATE(String PUBLISHDATE){
+        this.PUBLISHDATE = PUBLISHDATE == null ? null : PUBLISHDATE.trim();
+    }
+
+    public String getINPUTTIME() {
+        return INPUTTIME;
+    }
+
+    public void setINPUTTIME(String INPUTTIME){
+        this.INPUTTIME = INPUTTIME == null ? null : INPUTTIME.trim();
+    }
+
+    public String getUPDATETIME() {
+        return UPDATETIME;
+    }
+
+    public void setUPDATETIME(String UPDATETIME){
+        this.UPDATETIME = UPDATETIME == null ? null : UPDATETIME.trim();
+    }
+
+    public String getCREATETIME() {
+        return CREATETIME;
+    }
+
+    public void setCREATETIME(String CREATETIME){
+        this.CREATETIME = CREATETIME == null ? null : CREATETIME.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "StdLegalIndUnexecuted{" +
+                "uuID='" + uuID + '\'' +
+                ", reqID='" + reqID + '\'' +
+                ", businessID='" + businessID + '\'' +
+                ", ID='" + ID + '\'' +
+                ", INAME='" + INAME + '\'' +
+                ", AGE='" + AGE + '\'' +
+                ", SEXY='" + SEXY + '\'' +
+                ", CARDNUM='" + CARDNUM + '\'' +
+                ", CASECODE='" + CASECODE + '\'' +
+                ", COURTNAME='" + COURTNAME + '\'' +
+                ", AREANAME='" + AREANAME + '\'' +
+                ", GISTID='" + GISTID + '\'' +
+                ", REGDATE='" + REGDATE + '\'' +
+                ", GISTUNIT='" + GISTUNIT + '\'' +
+                ", PERFORMANCE='" + PERFORMANCE + '\'' +
+                ", DISRUPTTYPENAME='" + DISRUPTTYPENAME + '\'' +
+                ", DUTY='" + DUTY + '\'' +
+                ", PUBLISHDATE='" + PUBLISHDATE + '\'' +
+                ", INPUTTIME='" + INPUTTIME + '\'' +
+                ", UPDATETIME='" + UPDATETIME + '\'' +
+                ", CREATETIME='" + CREATETIME + '\'' +
+                '}';
+    }
+
+
+
+
+
+
+
+
+
+
+}

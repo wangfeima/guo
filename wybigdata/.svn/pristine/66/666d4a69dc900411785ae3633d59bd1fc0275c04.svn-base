@@ -1,0 +1,194 @@
+package common.pojo.etlstandardtable;
+
+import java.io.Serializable;
+
+/**
+ * @author: dxx
+ * @version: V-Cloude
+ * @date: 2018/12/18 13:38
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ * @file_name: wybigdata
+ * @pachage_name: common.pojo.etlstandardtable
+ * @description:json 空
+ */
+public class StdEntCaseInfoList implements Serializable {
+    private String uuid;
+
+    private String reqID;
+
+    private String businessID;
+
+    private String casetime;
+
+    private String casetype;
+
+    private String exesort;
+
+    private String caseresult;
+
+    private String pendecissdate;
+
+    private String penauth;
+
+    private String penbasis;
+
+    private String pentype;
+
+    private String penresult;
+
+    private String penam;
+
+    private String createtime;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid == null ? null : uuid.trim();
+    }
+
+    public String getReqID() {
+        return reqID;
+    }
+
+    public void setReqID(String reqID) {
+        this.reqID = reqID == null ? null : reqID.trim();
+    }
+
+    public String getBusinessID() {
+        return businessID;
+    }
+
+    public void setBusinessID(String businessID) {
+        this.businessID = businessID == null ? null : businessID.trim();
+    }
+
+    public String getCasetime() {
+        return casetime;
+    }
+
+    public void setCasetime(String casetime) {
+        this.casetime = casetime == null ? null : casetime.trim();
+    }
+
+    public String getCasetype() {
+        return casetype;
+    }
+
+    public void setCasetype(String casetype) {
+        this.casetype = casetype == null ? null : casetype.trim();
+    }
+
+    public String getExesort() {
+        return exesort;
+    }
+
+    public void setExesort(String exesort) {
+        this.exesort = exesort == null ? null : exesort.trim();
+    }
+
+    public String getCaseresult() {
+        return caseresult;
+    }
+
+    public void setCaseresult(String caseresult) {
+        this.caseresult = caseresult == null ? null : caseresult.trim();
+    }
+
+    public String getPendecissdate() {
+        return pendecissdate;
+    }
+
+    public void setPendecissdate(String pendecissdate) {
+        this.pendecissdate = pendecissdate == null ? null : pendecissdate.trim();
+    }
+
+    public String getPenauth() {
+        return penauth;
+    }
+
+    public void setPenauth(String penauth) {
+        this.penauth = penauth == null ? null : penauth.trim();
+    }
+
+    public String getPenbasis() {
+        return penbasis;
+    }
+
+    public void setPenbasis(String penbasis) {
+        this.penbasis = penbasis == null ? null : penbasis.trim();
+    }
+
+    public String getPentype() {
+        return pentype;
+    }
+
+    public void setPentype(String pentype) {
+        this.pentype = pentype == null ? null : pentype.trim();
+    }
+
+    public String getPenresult() {
+        return penresult;
+    }
+
+    public void setPenresult(String penresult) {
+        this.penresult = penresult == null ? null : penresult.trim();
+    }
+
+    public String getPenam() {
+        return penam;
+    }
+
+    public void setPenam(String penam) {
+        this.penam = penam == null ? null : penam.trim();
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime == null ? null : createtime.trim();
+    }
+
+    private String casereason;
+
+    private String illegfact;
+
+    private String penexest;
+
+    private String pendecno;
+
+    public String getCasereason() {
+        return casereason;
+    }
+
+    public void setCasereason(String casereason) {
+        this.casereason = casereason == null ? null : casereason.trim();
+    }
+
+    public String getIllegfact() {
+        return illegfact;
+    }
+
+    public void setIllegfact(String illegfact) {
+        this.illegfact = illegfact == null ? null : illegfact.trim();
+    }
+
+    public String getPenexest() {
+        return penexest;
+    }
+
+    public void setPenexest(String penexest) {
+        this.penexest = penexest == null ? null : penexest.trim();
+    }
+
+    public String getPendecno() {
+        return pendecno;
+    }
+
+    public void setPendecno(String pendecno) {
+        this.pendecno = pendecno == null ? null : pendecno.trim();
+    }
+}

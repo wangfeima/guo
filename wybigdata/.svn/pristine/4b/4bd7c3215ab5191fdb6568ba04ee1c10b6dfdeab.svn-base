@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfwy.online.sparkstreamingtask.dao.ETLCleanWriteDao">
+    <!--demo-->
+    <!--void inserjsonDemoObjectList(List<JsonDemoObject> jsonDemoObjectList) throws DaoException;-->
+    <insert id="inserjsonDemoObjectList" parameterType="java.util.List">
+        insert into json_demo_d(uuid,reqid,entName,createtime)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuid},#{item.reqid},#{item.entName},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!--Dxx的接口映射-->
+    <!--void inserStdEntAlterListList(List<StdEntAlterList> StdEntAlterListList) throws DaoException;-->
+    <insert id="inserStdEntAlterListList" parameterType="java.util.List">
+        insert into std_ent_alter_list(UUID,REQ_ID,BUSINESSID,ALTDATE,ALTITEM,ALTBE,ALTAF,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.altdate},#{item.altitem},#{item.altbe},#{item.altaf},SYSDATE())
+        </foreach>
+    </insert>
+    <!--void inserStdEntBasicListList(List<StdEntBasicList> stdEntBasicListList)throws DaoException;-->
+    <insert id="inserStdEntBasicListList" parameterType="java.util.List">
+        insert into std_ent_basic_list (UUID, REQ_ID, BUSINESSID,
+        ENTNAME, CREDITCODE, ORGCODE,
+        REGNO, ENTTYPE, LRNAME,
+        REGCAP, REGCAPCUR, RECCAP,
+        ESDATE, OPENFROM, OPENTO,
+        REGORG, APPRDATE, REGSTATUS,
+        INDUSTRYPHYCODE, INDUSTRYPHYNAME, INDUSTRYCODE,
+        INDUSTRYNAME, CANDATE, REVDATE,
+        ANCHEYEAR, ANCHEDATE, ORIREGNO,
+        IDENTITYCARDNT, CREATETIME, ADDRESS,
+        ABUITEM, CBUITEM, OPERATESCOPE,
+        OPERATESCOPEANDFORM)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID,jdbcType=VARCHAR}, #{item.reqID,jdbcType=VARCHAR}, #{item.businessID,jdbcType=VARCHAR},
+            #{item.entname,jdbcType=VARCHAR}, #{item.creditcode,jdbcType=VARCHAR}, #{item.orgcode,jdbcType=VARCHAR},
+            #{item.regno,jdbcType=VARCHAR}, #{item.enttype,jdbcType=VARCHAR}, #{item.lrname,jdbcType=VARCHAR},
+            #{item.regcap,jdbcType=DOUBLE}, #{item.regcapcur,jdbcType=VARCHAR}, #{item.reccap,jdbcType=DOUBLE},
+            #{item.esdate,jdbcType=VARCHAR}, #{item.openfrom,jdbcType=VARCHAR}, #{item.opento,jdbcType=VARCHAR},
+            #{item.regorg,jdbcType=VARCHAR}, #{item.apprdate,jdbcType=VARCHAR}, #{item.regstatus,jdbcType=VARCHAR},
+            #{item.industryphycode,jdbcType=VARCHAR}, #{item.industryphyname,jdbcType=VARCHAR}, #{item.industrycode,jdbcType=VARCHAR},
+            #{item.industryname,jdbcType=VARCHAR}, #{item.candate,jdbcType=VARCHAR}, #{item.revdate,jdbcType=VARCHAR},
+            #{item.ancheyear,jdbcType=VARCHAR}, #{item.anchedate,jdbcType=VARCHAR}, #{item.oriregno,jdbcType=VARCHAR},
+            #{item.identitycardnt,jdbcType=VARCHAR}, SYSDATE(), #{item.address,jdbcType=LONGVARCHAR},
+            #{item.abuitem,jdbcType=LONGVARCHAR}, #{item.cbuitem,jdbcType=LONGVARCHAR}, #{item.operatescope,jdbcType=LONGVARCHAR},
+            #{item.operatescopeandform,jdbcType=LONGVARCHAR})
+        </foreach>
+    </insert>
+    <!--void inserStdEntLrinvListList(List<StdEntLrinvList> stdEntLrinvListList)throws DaoException;-->
+    <insert id="inserStdEntLrinvListList" parameterType="java.util.List">
+        insert into std_ent_lrinv_list(
+        UUID,REQ_ID,BUSINESSID,
+        LRNAME,INVENTNAME,INVREGNO,
+        INVENTTYPE,INVREGCAP,REGCAPCUR,
+        REGSTATUS,CANDATE,REVDATE,
+        REGORG,SUBCONAM,CURRENCY,
+        FUNDEDRATIO,ESDATE,CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID},#{item.reqID},#{item.businessID},
+            #{item.lrname},#{item.inventname},#{item.invregno},
+            #{item.inventtype},#{item.invregcap},#{item.regcapcur},
+            #{item.regstatus},#{item.candate},#{item.revdate},
+            #{item.regorg},#{item.subconam},#{item.currency},
+            #{item.fundedratio},#{item.esdate},SYSDATE()
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntLrpositionListList(List<StdEntLrpositionList> stdEntLrpositionListList)throws DaoException;-->
+    <insert id="inserStdEntLrpositionListList" parameterType="java.util.List">
+        insert into std_ent_lrposition_list(
+                UUID,REQ_ID,BUSINESSID,
+                LRNAME,POSTIONENTNAME,POSTIONCREDITCODE,
+                POSTIONREGNO,POSTIONENTTYPE,POSTIONREGCAP,
+                REGCAPCUR,REGSTATUS,CANDATE,
+                REVDATE,REGORG,POSITION,
+                LEREPSIGN,ESDATE,CREATETIME
+        )
+        values
+            <foreach collection="list" item="item" index="index" separator=",">
+                (
+                #{item.uuID},#{item.reqID},#{item.businessID},
+                #{item.lrname},#{item.postionentname},#{item.postioncreditcode},
+                #{item.postionregno},#{item.postionenttype},#{item.postionregcap},
+                #{item.regcapcur},#{item.regstatus},#{item.candate},
+                #{item.revdate},#{item.regorg},#{item.position},
+                #{item.lerepsign},#{item.esdate},SYSDATE()
+                )
+        </foreach>
+    </insert>
+    <!--void inserStdEntMorDetailListList(List<StdEntMorDetailList> stdEntMorDetailListList)throws DaoException;-->
+    <insert id="inserStdEntMorDetailListList" parameterType="java.util.List">
+        insert into std_ent_mor_detail_list(
+        UUID,
+        REQ_ID,
+        BUSINESSID,
+        MORREGID,
+        MORTGAGOR,
+        MORE,
+        REGORG,
+        REGDATE,
+        MORTYPE,
+        MORREGCNO,
+        APPREGREA,
+        PRICLASECKIND,
+        PRICLASECAM,
+        PEFPERFROM,
+        PEFPERTO,
+        CANDATE,
+        CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID},
+            #{item.reqID},
+            #{item.businessID},
+            #{item.morregid},
+            #{item.mortgagor},
+            #{item.more},
+            #{item.regorg},
+            #{item.regdate},
+            #{item.mortype},
+            #{item.morregcno},
+            #{item.appregrea},
+            #{item.priclaseckind},
+            #{item.priclasecam},
+            #{item.pefperfrom},
+            #{item.pefperto},
+            #{item.candate},
+            SYSDATE()
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntPersonListList(List<StdEntPersonList> tdEntPersonListList)throws DaoException;-->
+    <insert id="inserStdEntPersonListList" parameterType="java.util.List">
+        insert into std_ent_person_list
+        (
+        UUID,REQ_ID,BUSINESSID,NAME,POSITION,SEX,CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID},#{item.reqID},#{item.businessID},#{item.name},#{item.position},#{item.sex},SYSDATE()
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntShareHolderListList(List<StdEntShareHolderList> StdEntShareHolderListList)throws DaoException;-->
+    <insert id="inserStdEntShareHolderListList" parameterType="java.util.List">
+        insert into std_ent_share_holder_list(
+        UUID,REQ_ID,BUSINESSID,
+        SHAREHOLDERNAME,SUBCONAM,REGCAPCUR,
+        CONDATE,FUNDEDRATIO,COUNTRY,
+        CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID},#{item.reqID},#{item.businessID},
+            #{item.shareholdername},#{item.subconam},#{item.regcapcur},
+            #{item.condate},#{item.fundedratio},#{item.country},
+            SYSDATE()
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntSharesfrostListList(List<StdEntSharesfrostList> stdEntSharesfrostListList)throws DaoException;-->
+    <insert id="inserStdEntSharesfrostListList" parameterType="java.util.List">
+        insert into std_ent_sharesfrost_list(
+        UUID,REQ_ID,BUSINESSID,
+        FRODOCNO,FROAUTH,FROFROM,
+        FROTO,FROAM,THAWAUTH,
+        THAWDOCNO,THAWDATE,THAWCOMMENT,
+        CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID},#{item.reqID},#{item.businessID},
+            #{item.frodocno},#{item.froauth},#{item.frofrom},
+            #{item.froto},#{item.froam},#{item.thawauth},
+            #{item.thawdocno},#{item.thawdate},#{item.thawcomment},
+            SYSDATE()
+            )
+        </foreach>
+    </insert>
+    <!--json kong-->
+    <!--void inserStdEntCaseInfoListList(List<StdEntCaseInfoList> stdEntCaseInfoListList)throws DaoException;-->
+    <insert id="inserStdEntCaseInfoListList" parameterType="java.util.List">
+        insert into std_ent_caseinfo_list
+        (
+        UUID, REQ_ID, BUSINESSID,
+        CASETIME, CASETYPE, EXESORT,
+        CASERESULT, PENDECISSDATE, PENAUTH,
+        PENBASIS, PENTYPE, PENRESULT,
+        PENAM, CREATETIME, CASEREASON,
+        ILLEGFACT, PENEXEST, PENDECNO
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID,jdbcType=VARCHAR}, #{item.reqID,jdbcType=VARCHAR}, #{item.businessID,jdbcType=VARCHAR},
+            #{item.casetime,jdbcType=VARCHAR}, #{item.casetype,jdbcType=VARCHAR}, #{item.exesort,jdbcType=VARCHAR},
+            #{item.caseresult,jdbcType=VARCHAR}, #{item.pendecissdate,jdbcType=VARCHAR}, #{item.penauth,jdbcType=VARCHAR},
+            #{item.penbasis,jdbcType=VARCHAR}, #{item.pentype,jdbcType=VARCHAR}, #{item.penresult,jdbcType=VARCHAR},
+            #{item.penam,jdbcType=VARCHAR}, SYSDATE(), #{item.casereason,jdbcType=LONGVARCHAR},
+            #{item.illegfact,jdbcType=LONGVARCHAR}, #{item.penexest,jdbcType=LONGVARCHAR}, #{item.pendecno,jdbcType=LONGVARCHAR}
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntFiliationListList(List<StdEntFiliationList> stdEntFiliationListList)throws DaoException;-->
+    <insert id="inserStdEntFiliationListList" parameterType="java.util.List">
+        insert into std_ent_filiation_list
+        (
+        UUID, REQ_ID, BUSINESSID,
+        BRNAME, BRREGNO, BRPRINCIPAL,
+        BRADDR, CREATETIME, CBUITEM
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID,jdbcType=VARCHAR}, #{item.reqID,jdbcType=VARCHAR}, #{item.businessID,jdbcType=VARCHAR},
+            #{item.brname,jdbcType=VARCHAR}, #{item.brregno,jdbcType=VARCHAR}, #{item.brprincipal,jdbcType=VARCHAR},
+            #{item.braddr,jdbcType=VARCHAR}, SYSDATE(), #{item.cbuitem,jdbcType=LONGVARCHAR}
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntInvitemListList(List<StdEntInvitemList> stdEntInvitemListList)throws DaoException;-->
+    <insert id="inserStdEntInvitemListList" parameterType="java.util.List">
+        insert into std_ent_invitem_list
+        (UUID, REQ_ID, BUSINESSID,
+        INVENTNAME, INVREGNO, INVENTTYPE,
+        INVREGCAP, REGCAPCUR, CANDATE,
+        REVDATE, REGSTATUS, REGORG,
+        SUBCONAM, CURRENCY, FUNDEDRATIO,
+        ESDATE, INVLRNAME, CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID,jdbcType=VARCHAR}, #{item.reqID,jdbcType=VARCHAR}, #{item.businessID,jdbcType=VARCHAR},
+            #{item.inventname,jdbcType=VARCHAR}, #{item.invregno,jdbcType=VARCHAR}, #{item.inventtype,jdbcType=VARCHAR},
+            #{item.invregcap,jdbcType=VARCHAR}, #{item.regcapcur,jdbcType=VARCHAR}, #{item.candate,jdbcType=VARCHAR},
+            #{item.revdate,jdbcType=VARCHAR}, #{item.regstatus,jdbcType=VARCHAR}, #{item.regorg,jdbcType=VARCHAR},
+            #{item.subconam,jdbcType=DOUBLE}, #{item.currency,jdbcType=VARCHAR}, #{item.fundedratio,jdbcType=VARCHAR},
+            #{item.esdate,jdbcType=VARCHAR}, #{item.invlrname,jdbcType=VARCHAR}, SYSDATE()
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntLiquidationListList(List<StdEntLiquidationList> stdEntLiquidationListList)throws DaoException;-->
+    <insert id="inserStdEntLiquidationListList" parameterType="java.util.List">
+        insert into std_ent_liquidation_list
+        (UUID, REQ_ID, BUSINESSID,
+        LIGENTITY, LIGPRINCIPAL, LIQMEN,
+        LIGENDDATE, DEBTTRANEE, CLAIMTRANEE,
+        CREATETIME, LIGST
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID,jdbcType=VARCHAR}, #{item.reqID,jdbcType=VARCHAR}, #{item.businessID,jdbcType=VARCHAR},
+            #{item.ligentity,jdbcType=VARCHAR}, #{item.ligprincipal,jdbcType=VARCHAR}, #{item.liqmen,jdbcType=VARCHAR},
+            #{item.ligenddate,jdbcType=TIMESTAMP}, #{item.debttranee,jdbcType=VARCHAR}, #{item.claimtranee,jdbcType=VARCHAR},
+            SYSDATE(), #{item.ligst,jdbcType=LONGVARCHAR}
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntMorGuainfoListList(List<StdEntMorGuainfoList> stdEntMorGuainfoListList)throws DaoException;-->
+    <insert id="inserStdEntMorGuainfoListList" parameterType="java.util.List">
+        insert into std_ent_mor_guainfo_list
+        (
+        UUID, REQ_ID, BUSINESSID,
+        MORREG_ID, GUANAME, QUAN,
+        GUAVALUE, CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID,jdbcType=VARCHAR}, #{item.reqID,jdbcType=VARCHAR}, #{item.businessID,jdbcType=VARCHAR},
+            #{item.morregID,jdbcType=VARCHAR}, #{item.guaname,jdbcType=VARCHAR}, #{item.quan,jdbcType=VARCHAR},
+            #{item.guavalue,jdbcType=DOUBLE}, SYSDATE()
+            )
+        </foreach>
+    </insert>
+    <!--void inserStdEntSharesImpawnListList(List<StdEntSharesImpawnList> stdEntSharesImpawnListList)throws DaoException;-->
+    <insert id="inserStdEntSharesImpawnListList" parameterType="java.util.List">
+        insert into std_ent_shares_impawn_list
+        (
+        UUID, REQ_ID, BUSINESSID,
+        IMPORG, IMPORGTYPE, IMPAM,
+        IMPONRECDATE, IMPEXAEEP, IMPSANDATE,
+        IMPTO, CREATETIME
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.uuID,jdbcType=VARCHAR}, #{item.reqID,jdbcType=VARCHAR}, #{item.businessID,jdbcType=VARCHAR},
+            #{item.imporg,jdbcType=VARCHAR}, #{item.imporgtype,jdbcType=VARCHAR}, #{item.impam,jdbcType=DOUBLE},
+            #{item.imponrecdate,jdbcType=TIMESTAMP}, #{item.impexaeep,jdbcType=VARCHAR}, #{item.impsandate,jdbcType=TIMESTAMP},
+            #{item.impto,jdbcType=TIMESTAMP}, SYSDATE()
+            )
+        </foreach>
+    </insert>
+
+
+
+
+
+    <!--Wfm的接口映射-->
+    <!--void inserStdEntAlterListList(List<StdEntAlterList> StdEntAlterListList) throws DaoException;-->
+    <insert id="inserStdEntRyposlrListList" parameterType="java.util.List">
+        insert into std_ent_ryposlr_list(UUID,REQ_ID,BUSINESSID,RYNAME,ENTNAME,REGNO,ENTTYPE,REGCAP,REGCAPCUR,REGSTATUS,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.ryName},#{item.entName},#{item.regNo},#{item.entType},#{item.regCap},#{item.regCapcur},#{item.entStatus},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!--void inserStdEntRyposperListList(List<StdEntRyposperList> stdEntRyposperList) throws DaoException;-->
+    <insert id="inserStdEntRyposperListList" parameterType="java.util.List">
+        insert into std_ent_ryposper_list(UUID,REQ_ID,BUSINESSID,RYNAME,ENTNAME,REGNO,ENTTYPE,REGCAP,REGCAPCUR,REGSTATUS,POSITION,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.ryname},#{item.entname},#{item.regno},#{item.enttype},#{item.regcap},#{item.regcapcur},#{item.regstatus},#{item.position},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!--void inserStdEntRyposshaListList(List<StdEntRyposshaList> stdEntRyposshaList) throws DaoException;-->
+    <insert id="inserStdEntRyposshaListList" parameterType="java.util.List">
+        insert into std_ent_rypossha_list(UUID,REQ_ID,BUSINESSID,RYNAME,ENTNAME,REGNO,ENTTYPE,REGCAP,REGCAPCUR,SUBCONAM,SUBCURRENCY,REGSTATUS,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.ryName},#{item.entName},#{item.regNo},#{item.entType},#{item.regCap},#{item.regCapcur},#{item.subConam},#{item.subCurrency},#{item.entStatus},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!--void #R228 inserstdLegalEnterpriseExecutedList(LStdLegalEnterpriseExecutedutStdLegalEnterpriseExecuteduted) throws DaoException;-->
+    <insert id="inserstdLegalEnterpriseExecutedList" parameterType="java.util.List">
+        insert into std_legal_enterprise_executed(UUID,REQ_ID,BUSINESSID,SERIALNO,PNAME,PARTYCARDNUM,CASECODE,EXECCOURTNAME,EXECMONEY,CASECREATETIME,INPUTTIME,UPDATETIME,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.serialno},#{item.pname},#{item.partycardnum},#{item.casecode},#{item.execcourtname},#{item.execmoney},#{item.casecreatetime},#{item.inputtime},#{item.updatetime},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!--void inserStdLegalIndUnexecutedList(List<StdLegalIndUnexecuted> stdLegalIndUnexecuted) throws DaoException;-->
+    <insert id="inserStdLegalIndUnexecutedList" parameterType="java.util.List">
+        insert into std_legal_ind_unexecuted(UUID,REQ_ID,BUSINESSID,ID,INAME,AGE,SEXY,CARDNNUM,CASECODE,COURTNAME,AREANAME,GISTID,REGDATE,GISTUNIT,PERFORMANCE,DISRUPTTYPENAME,DUTY,PUBLISHDATE,INPUTTIME,UPDATETIME,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.ID},#{item.iname},#{item.age},#{item.sexy},#{item.cardnum},#{item.casecode},#{item.courtname},#{item.areaname},#{item.gistid},#{item.regdate},#{item.gistunit},#{item.performance},#{item.disrupttypename},#{item.duty},#{item.publishdate},#{item.inputtime},#{item.updatetime},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!-- r229 void inserStdLegalIndUnexecutedList(List<StdLegalIndUnexecuted> stdLegalIndUnexecuted) throws DaoException;-->
+    <insert id="inserStdLegalIndividualExecutedList" parameterType="java.util.List">
+        insert into std_legal_individual_executed(UUID,REQ_ID,BUSINESSID,SERIALNO,PNAME,PARTYCARDNUM,CASECODE,EXECCOURTNAME,EXECMONEY,CASECREATETIME,INPUTTIME,UPDATETIME,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.serialno},#{item.pname},#{item.partycardnum},#{item.casecode},#{item.execcourtname},#{item.execmoney},#{item.casecreatetime},#{item.inputtime},#{item.updatetime},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!-- R230 void inserstdLegalEntUnexecutedList(List<StdLegalIndUnexecuted> stdLegalIndUnexecuted) throws DaoException;-->
+    <insert id="inserstdLegalEntUnexecutedList" parameterType="java.util.List">
+        insert into std_legal_ent_unexecuted(UUID,REQ_ID,BUSINESSID,ID,INAME,CARDNNUM,CASECODE,COURTNAME,AREANAME,GISTID,REGDATE,GISTUNIT,PERFORMANCE,DISRUPTTYPENAME,DUTY,PUBLISHDATE,INPUTTIME,UPDATETIME,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.ID},#{item.iname},#{item.cardnnum},#{item.casecode},#{item.courtname},#{item.areaname},#{item.gistID},#{item.regdate},#{item.gistunit},#{item.performance},#{item.disrupttypename},#{item.duty},#{item.publishdate},#{item.inputtime},#{item.updatetime},SYSDATE())
+        </foreach>
+    </insert>
+
+    <!-- R227 void inserStdLegalDataStructuredList(List<StdLegalDataStructured> StdLegalDataStructured) throws DaoException;-->
+    <insert id="inserStdLegalDataStructuredList" parameterType="java.util.List">
+        insert into std_legal_data_structured(UUID,REQ_ID,BUSINESSID,SERIALNO,ENTNAME,ORGCODE,PTYPE,CASENO,CASEREASON,DOCUCLASS,TARGET,TARGETTYPE,PDESC,PLAINTIFF,PARTY,JUDGEMENTRESULT,PDATE,CASEDATE,COURT,DEPARTMENT,WINSTAFF,IMPORTSTAFF,AGENT,PAYBANK,PAYEE,TARGETAMOUNT,TELNO,ENDORSER,HOLDER,TICKETTIME,EXPIRATIONDATE,BILLNUMER,PROVINCE,CITY,SECRETARY,CHIEFJUDGE,JUDGE,LAWSTATUS,DATASOURCE,COLLECTIONDATE,CREATETIME)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.uuID},#{item.reqID},#{item.businessID},#{item.serialno},#{item.entname},#{item.orgcode},#{item.ptype},#{item.caseno},#{item.casereason},#{item.docuclass},#{item.target},#{item.targettype},#{item.pdesc},#{item.plaintiff},#{item.party},#{item.judgementresult},#{item.pdate},#{item.casedate},#{item.court},#{item.department},#{item.winstaff},#{item.importstaff},#{item.agent},#{item.paybank},#{item.payee},#{item.targetamount},#{item.telno},#{item.endorser},#{item.holder},#{item.tickettime},#{item.expirationdate},#{item.billnumer},#{item.province},#{item.city},#{item.secretary},#{item.chiefjudge},#{item.judge},#{item.lawstatus},#{item.datasource},#{item.collectiondate},SYSDATE())
+        </foreach>
+    </insert>
+
+
+
+</mapper>

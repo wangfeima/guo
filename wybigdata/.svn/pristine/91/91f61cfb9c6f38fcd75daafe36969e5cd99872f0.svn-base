@@ -1,0 +1,354 @@
+package common.pojo.etlstandardtable;
+
+import java.io.Serializable;
+
+/**
+ * @author: dxx
+ * @version: V-Cloude
+ * @date: 2018/12/17 19:38
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ * @file_name: wybigdata
+ * @pachage_name: common.pojo.etlstandardtable
+ * @description:
+ */
+public class StdEntBasicList implements Serializable {
+    private String uuid;
+
+    private String reqID;
+
+    private String businessID;
+
+    private String entname;
+
+    private String creditcode;
+
+    private String orgcode;
+
+    private String regno;
+
+    private String enttype;
+
+    private String lrname;
+
+    private Double regcap;
+
+    private String regcapcur;
+
+    private Double reccap;
+
+    private String esdate;
+
+    private String openfrom;
+
+    private String opento;
+
+    private String regorg;
+
+    private String apprdate;
+
+    private String regstatus;
+
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    private String abuitem;
+
+    public String getAbuitem() {
+        return abuitem;
+    }
+
+    public void setAbuitem(String abuitem) {
+        this.abuitem = abuitem == null ? null : abuitem.trim();
+    }
+
+    private String cbuitem;
+
+    public String getCbuitem() {
+        return cbuitem;
+    }
+
+    public void setCbuitem(String cbuitem) {
+        this.cbuitem = cbuitem == null ? null : cbuitem.trim();
+    }
+
+    private String operatescope;
+
+    public String getOperatescope() {
+        return operatescope;
+    }
+
+    public void setOperatescope(String operatescope) {
+        this.operatescope = operatescope == null ? null : operatescope.trim();
+    }
+
+    private String operatescopeandform;
+
+    public String getOperatescopeandform() {
+        return operatescopeandform;
+    }
+
+    public void setOperatescopeandform(String operatescopeandform) {
+        this.operatescopeandform = operatescopeandform == null ? null : operatescopeandform.trim();
+    }
+
+    private String industryphycode;
+
+    private String industryphyname;
+
+    private String industrycode;
+
+    private String industryname;
+
+    private String candate;
+
+    private String revdate;
+
+    private String ancheyear;
+
+    private String anchedate;
+
+    private String oriregno;
+
+    private String identitycardnt;
+
+    private String createtime;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid == null ? null : uuid.trim();
+    }
+
+    public String getReqID() {
+        return reqID;
+    }
+
+    public void setReqID(String reqID) {
+        this.reqID = reqID == null ? null : reqID.trim();
+    }
+
+    public String getBusinessID() {
+        return businessID;
+    }
+
+    public void setBusinessID(String businessID) {
+        this.businessID = businessID == null ? null : businessID.trim();
+    }
+
+    public String getEntname() {
+        return entname;
+    }
+
+    public void setEntname(String entname) {
+        this.entname = entname == null ? null : entname.trim();
+    }
+
+    public String getCreditcode() {
+        return creditcode;
+    }
+
+    public void setCreditcode(String creditcode) {
+        this.creditcode = creditcode == null ? null : creditcode.trim();
+    }
+
+    public String getOrgcode() {
+        return orgcode;
+    }
+
+    public void setOrgcode(String orgcode) {
+        this.orgcode = orgcode == null ? null : orgcode.trim();
+    }
+
+    public String getRegno() {
+        return regno;
+    }
+
+    public void setRegno(String regno) {
+        this.regno = regno == null ? null : regno.trim();
+    }
+
+    public String getEnttype() {
+        return enttype;
+    }
+
+    public void setEnttype(String enttype) {
+        this.enttype = enttype == null ? null : enttype.trim();
+    }
+
+    public String getLrname() {
+        return lrname;
+    }
+
+    public void setLrname(String lrname) {
+        this.lrname = lrname == null ? null : lrname.trim();
+    }
+
+    public Double getRegcap() {
+        return regcap;
+    }
+
+    public void setRegcap(Double regcap) {
+        this.regcap = regcap;
+    }
+
+    public String getRegcapcur() {
+        return regcapcur;
+    }
+
+    public void setRegcapcur(String regcapcur) {
+        this.regcapcur = regcapcur == null ? null : regcapcur.trim();
+    }
+
+    public Double getReccap() {
+        return reccap;
+    }
+
+    public void setReccap(Double reccap) {
+        this.reccap = reccap;
+    }
+
+    public String getEsdate() {
+        return esdate;
+    }
+
+    public void setEsdate(String esdate) {
+        this.esdate = esdate == null ? null : esdate.trim();
+    }
+
+    public String getOpenfrom() {
+        return openfrom;
+    }
+
+    public void setOpenfrom(String openfrom) {
+        this.openfrom = openfrom == null ? null : openfrom.trim();
+    }
+
+    public String getOpento() {
+        return opento;
+    }
+
+    public void setOpento(String opento) {
+        this.opento = opento == null ? null : opento.trim();
+    }
+
+    public String getRegorg() {
+        return regorg;
+    }
+
+    public void setRegorg(String regorg) {
+        this.regorg = regorg == null ? null : regorg.trim();
+    }
+
+    public String getApprdate() {
+        return apprdate;
+    }
+
+    public void setApprdate(String apprdate) {
+        this.apprdate = apprdate == null ? null : apprdate.trim();
+    }
+
+    public String getRegstatus() {
+        return regstatus;
+    }
+
+    public void setRegstatus(String regstatus) {
+        this.regstatus = regstatus == null ? null : regstatus.trim();
+    }
+
+    public String getIndustryphycode() {
+        return industryphycode;
+    }
+
+    public void setIndustryphycode(String industryphycode) {
+        this.industryphycode = industryphycode == null ? null : industryphycode.trim();
+    }
+
+    public String getIndustryphyname() {
+        return industryphyname;
+    }
+
+    public void setIndustryphyname(String industryphyname) {
+        this.industryphyname = industryphyname == null ? null : industryphyname.trim();
+    }
+
+    public String getIndustrycode() {
+        return industrycode;
+    }
+
+    public void setIndustrycode(String industrycode) {
+        this.industrycode = industrycode == null ? null : industrycode.trim();
+    }
+
+    public String getIndustryname() {
+        return industryname;
+    }
+
+    public void setIndustryname(String industryname) {
+        this.industryname = industryname == null ? null : industryname.trim();
+    }
+
+    public String getCandate() {
+        return candate;
+    }
+
+    public void setCandate(String candate) {
+        this.candate = candate == null ? null : candate.trim();
+    }
+
+    public String getRevdate() {
+        return revdate;
+    }
+
+    public void setRevdate(String revdate) {
+        this.revdate = revdate == null ? null : revdate.trim();
+    }
+
+    public String getAncheyear() {
+        return ancheyear;
+    }
+
+    public void setAncheyear(String ancheyear) {
+        this.ancheyear = ancheyear == null ? null : ancheyear.trim();
+    }
+
+    public String getAnchedate() {
+        return anchedate;
+    }
+
+    public void setAnchedate(String anchedate) {
+        this.anchedate = anchedate == null ? null : anchedate.trim();
+    }
+
+    public String getOriregno() {
+        return oriregno;
+    }
+
+    public void setOriregno(String oriregno) {
+        this.oriregno = oriregno == null ? null : oriregno.trim();
+    }
+
+    public String getIdentitycardnt() {
+        return identitycardnt;
+    }
+
+    public void setIdentitycardnt(String identitycardnt) {
+        this.identitycardnt = identitycardnt == null ? null : identitycardnt.trim();
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime == null ? null : createtime.trim();
+    }
+}

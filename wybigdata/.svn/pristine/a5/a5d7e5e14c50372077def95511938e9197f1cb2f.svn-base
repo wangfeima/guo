@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfwy.online.sparkstreamingtask.dao.IdeQuotasReadDao">
+	<resultMap id="QuotasMap" type="common.pojo.quotas.QuotasEntity">
+		<id column="QUOTAS_ID" property="quotasId" jdbcType="VARCHAR" />
+		<result column="QUOTAS_CODE" property="quotasCode" jdbcType="VARCHAR" />
+		<result column="QUOTAS_NAME" property="quotasName" jdbcType="VARCHAR" />
+		<result column="EXEC_METHOD" property="execMethod" jdbcType="VARCHAR" />
+		<result column="EXEC_SQL" property="execSql" jdbcType="VARCHAR" />
+		<result column="EXEC_STAGE" property="execStage" jdbcType="CHAR" />
+		<result column="EXEC_PRI" property="execPri" jdbcType="CHAR" />
+		<result column="DATA_SOURCES" property="dataSources" jdbcType="CHAR" />
+		<result column="QUOTAS_TYPE" property="quotasType" jdbcType="CHAR" />
+		<result column="CREATOR" property="creator" jdbcType="VARCHAR" />
+		<result column="CREATETIME" property="createTime" jdbcType="VARCHAR" />
+		<result column="UPDATOR" property="updator" jdbcType="VARCHAR" />
+		<result column="UPDATETIME" property="updateTime" jdbcType="VARCHAR" />
+		<result column="ENABLED" property="enabled" jdbcType="CHAR" />
+	</resultMap>
+	<sql id="Quotas_Column_List">
+		REQ_ID, BUSINESSID, QUOTAS_CODE, QUOTAS_NAME, EXEC_METHOD, EXEC_SQL, EXEC_STAGE,
+		EXEC_PRI,DATA_SOURCES,QUOTAS_TYPE,
+		CREATOR, CREATETIME, UPDATOR, UPDATETIME, ENABLED
+	</sql>
+	<!-- 根据传入条件查询指标信息表 -->
+	<select id="find" resultMap="QuotasMap" parameterType="common.pojo.quotas.QuotasEntity">
+		select
+		<include refid="Quotas_Column_List" />
+		from ide_quotas
+		<where>
+			<if test="searchParam != null and searchParam !=''.toString()">
+				QUOTAS_CODE like '%' || #{searchParam,jdbcType=VARCHAR} || '%' or QUOTAS_NAME
+				like '%' || #{searchParam,jdbcType=VARCHAR} || '%'
+			</if>
+			<if test="reqID != null and reqID !=''.toString()">
+				and REQ_ID = #{reqID,jdbcType=VARCHAR}
+			</if>
+			<if test="businessID != null and businessID !=''.toString()">
+				and BUSINESSID = #{businessID,jdbcType=VARCHAR}
+			</if>
+			<if test="quotasCode != null and quotasCode !=''.toString()">
+				and QUOTAS_CODE like '%'||#{quotasCode}||'%'
+			</if>
+			<if test="quotasName != null and quotasName !=''.toString()">
+				and QUOTAS_NAME like '%'||#{quotasName}||'%'
+			</if>
+			<if test="execMethod != null and execMethod !=''.toString()">
+				and EXEC_METHOD = #{execMethod,jdbcType=VARCHAR}
+			</if>
+			<if test="execSql != null and execSql !=''.toString()">
+				and EXEC_SQL = #{execSql,jdbcType=VARCHAR}
+			</if>
+			<if test="execStage != null and execStage !=''.toString()">
+				and EXEC_STAGE = #{execStage,jdbcType=CHAR}
+			</if>
+			<if test="dataSources != null and dataSources !=''.toString()">
+				and DATA_SOURCES = #{dataSources,jdbcType=VARCHAR}
+			</if>
+			<if test="quotasType != null and quotasType !=''.toString()">
+				and QUOTAS_TYPE = #{quotasType,jdbcType=VARCHAR}
+			</if>
+			<if test="execPri != null and execPri !=''.toString()">
+				and EXEC_PRI = #{execPri,jdbcType=NUMERIC}
+			</if>
+			<if test="productCode != null and productCode !=''.toString()">
+				and PRODUCTCODE = #{productCode,jdbcType=VARCHAR}
+			</if>
+			<if test="bankNo != null and bankNo !=''.toString()">
+				and BANKNO = #{bankNo,jdbcType=VARCHAR}
+			</if>
+			and ENABLED = 'Y'
+		</where>
+	</select>
+	<!-- 执行指标SQL -->
+	<select id="execQuotas" resultType="map"  parameterType="map">
+		${execSql}
+	</select>
+
+</mapper>

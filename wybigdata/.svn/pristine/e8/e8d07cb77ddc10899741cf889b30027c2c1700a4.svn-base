@@ -1,0 +1,185 @@
+package common.pojo.etlstandardtable;
+
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * @author: dxx
+ * @version: V-Cloude
+ * @date: 2018/12/18 13:38
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ * @file_name: wybigdata
+ * @pachage_name: common.pojo.etlstandardtable
+ * @description:
+ */
+public class StdEntMorDetailList implements Serializable {
+    private String uuID;
+
+    private String reqID;
+
+    private String businessID;
+
+    private String morregid;
+
+    private String mortgagor;
+
+    private String more;
+
+    private String regorg;
+
+    private Date regdate;
+
+    private String mortype;
+
+    private String morregcno;
+
+    private String priclaseckind;
+
+    private Double priclasecam;
+
+    private Date pefperfrom;
+
+    private Date pefperto;
+
+    private Date candate;
+
+    private String createtime;
+
+    private String appregrea;
+
+    public String getUuID() {
+        return uuID;
+    }
+
+    public void setUuID(String uuID) {
+        this.uuID = uuID == null ? null : uuID.trim();
+    }
+
+    public String getReqID() {
+        return reqID;
+    }
+
+    public void setReqID(String reqID) {
+        this.reqID = reqID == null ? null : reqID.trim();
+    }
+
+    public String getBusinessID() {
+        return businessID;
+    }
+
+    public void setBusinessID(String businessID) {
+        this.businessID = businessID == null ? null : businessID.trim();
+    }
+
+    public String getMorregid() {
+        return morregid;
+    }
+
+    public void setMorregid(String morregid) {
+        this.morregid = morregid == null ? null : morregid.trim();
+    }
+
+    public String getMortgagor() {
+        return mortgagor;
+    }
+
+    public void setMortgagor(String mortgagor) {
+        this.mortgagor = mortgagor == null ? null : mortgagor.trim();
+    }
+
+    public String getMore() {
+        return more;
+    }
+
+    public void setMore(String more) {
+        this.more = more == null ? null : more.trim();
+    }
+
+    public String getRegorg() {
+        return regorg;
+    }
+
+    public void setRegorg(String regorg) {
+        this.regorg = regorg == null ? null : regorg.trim();
+    }
+
+    public Date getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(Date regdate) {
+        this.regdate = regdate;
+    }
+
+    public String getMortype() {
+        return mortype;
+    }
+
+    public void setMortype(String mortype) {
+        this.mortype = mortype == null ? null : mortype.trim();
+    }
+
+    public String getMorregcno() {
+        return morregcno;
+    }
+
+    public void setMorregcno(String morregcno) {
+        this.morregcno = morregcno == null ? null : morregcno.trim();
+    }
+
+    public String getPriclaseckind() {
+        return priclaseckind;
+    }
+
+    public void setPriclaseckind(String priclaseckind) {
+        this.priclaseckind = priclaseckind == null ? null : priclaseckind.trim();
+    }
+
+    public Double getPriclasecam() {
+        return priclasecam;
+    }
+
+    public void setPriclasecam(Double priclasecam) {
+        this.priclasecam = priclasecam;
+    }
+
+    public Date getPefperfrom() {
+        return pefperfrom;
+    }
+
+    public void setPefperfrom(Date pefperfrom) {
+        this.pefperfrom = pefperfrom;
+    }
+
+    public Date getPefperto() {
+        return pefperto;
+    }
+
+    public void setPefperto(Date pefperto) {
+        this.pefperto = pefperto;
+    }
+
+    public Date getCandate() {
+        return candate;
+    }
+
+    public void setCandate(Date candate) {
+        this.candate = candate;
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime == null ? null : createtime.trim();
+    }
+
+    public String getAppregrea() {
+        return appregrea;
+    }
+
+    public void setAppregrea(String appregrea) {
+        this.appregrea = appregrea == null ? null : appregrea.trim();
+    }
+}

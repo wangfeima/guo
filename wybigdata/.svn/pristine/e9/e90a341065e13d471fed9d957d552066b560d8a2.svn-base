@@ -1,0 +1,139 @@
+package com.dfwy.online.sparkstreamingtask.vcloude.task;
+
+import com.alibaba.fastjson.JSONObject;
+import common.constant.Constants;
+import common.pojo.applicantinformation.ApplicantInformationTO;
+import common.pojo.quotas.QuotasDataValueEntity;
+import common.utils.date.DateUtils;
+import common.utils.exception.ErrorCodeIDE;
+import common.utils.exception.ServiceException;
+import common.utils.hbase.HBaseUtils;
+import common.utils.md5utils.MD5Util;
+import com.alibaba.fastjson.JSON;
+import common.utils.stringutils.StringUtils;
+import org.apache.hadoop.hbase.TableName;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Table;
+import org.apache.hadoop.hbase.util.Bytes;
+
+
+import java.util.Set;
+import java.util.Vector;
+
+import static common.constant.Constants.*;
+
+/**
+ * @author: dxx
+ * @version: V-Cloude
+ * @date: 2018/11/23 15:32
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ * @file_name: TFcloude01
+ * @pachage_name: online.streaming
+ * @description: SparkStreaming的数据入库操作
+ */
+public class HBaseOperater {
+    public static void data2HBase(String record, ApplicantInformationTO applicantInformationTO, String jsonStr) throws Exception {
+        //获取HBase数据库连接
+        Connection conn = null;
+        //获取HBase表连接
+        Table table = null;
+
+        String columnFamily = null;
+        String columnFamily_column_1 = null;
+        String columnFamily_column_2 = null;
+        String columnFamily_column_3 = null;
+        String dataSourceKey = null;
+        //MD5设置编码
+        String charset = "UTF-8";
+        try {
+            conn = HBaseUtils.getCon();
+            table = conn.getTable(TableName.valueOf(Constants.Dfwybank_VCloude_Hbase_BusinessJustice_TableName));
+            //安硕原始报文数据
+            String amarsoftData = applicantInformationTO.getAmarsoftData();
+            //中诚信原始报文数据
+            String ccxData = null;
+            //String elementscreditData = applicantInformationTO.getAmarsoftData();
+            //元素原始报文数据
+            String elementscreditData = null;
+            //String elementscreditData = applicantInformationTO.getAmarsoftData();
+            //ReqId
+            String reqID = applicantInformationTO.getReqID();
+            //BusinessID
+            String businessID = applicantInformationTO.getBusinessID();
+            //EntName 企业名称
+            String entName = applicantInformationTO.getEntName();
+            //indName	申请人姓名
+            String indName = applicantInformationTO.getIndName();
+            //entCreditID	社会统一信用代码
+            String entCreditID = applicantInformationTO.getEntCreditID();
+            //时间戳
+            String yyyyMMdd = DateUtils.getUserDate("yyyyMMdd");
+            //获取rowKey
+            StringBuffer stringBuffer = new StringBuffer();
+            String rowKey = stringBuffer.append(MD5Util.MD5Encode(businessID + reqID, charset).substring(0, 8))
+                    .append("_")
+                    .append(yyyyMMdd)
+                    .append("_")
+                    .append(businessID)
+                    .append("_")
+                    .append(reqID)
+                    .append("_")
+                    .append(entName)
+                    .append("_")
+                    .append(entCreditID)
+                    .append("_")
+                    .append(indName)
+                    .toString();
+            //将数据储存到Put结构之中
+            Put put = new Put(Bytes.toBytes(rowKey));
+            //原始数据的整体数据的储存
+            if (StringUtils.isNotEmpty(amarsoftData)) {
+                dataSourceKey = Dfwybank_VCloude_Hbase_BusinessJustice_DateSourceKey_1;
+                columnFamily_column_1 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_1_ColumnName_1;
+                columnFamily_column_2 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_2_ColumnName_1;
+                columnFamily_column_3 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_3_ColumnName_1;
+            }
+            if (StringUtils.isNotEmpty(ccxData)) {
+                dataSourceKey = Dfwybank_VCloude_Hbase_BusinessJustice_DateSourceKey_2;
+                columnFamily_column_1 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_1_ColumnName_2;
+                columnFamily_column_2 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_2_ColumnName_2;
+                columnFamily_column_3 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_3_ColumnName_2;
+            }
+            if (StringUtils.isNotEmpty(elementscreditData)) {
+                dataSourceKey = Dfwybank_VCloude_Hbase_BusinessJustice_DateSourceKey_3;
+                columnFamily_column_1 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_1_ColumnName_3;
+                columnFamily_column_2 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_2_ColumnName_3;
+                columnFamily_column_3 = Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_3_ColumnName_3;
+            }
+
+            //向“data”列簇存入数据报文（整体）
+            put.addColumn(Bytes.toBytes(Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_1),
+                    Bytes.toBytes(columnFamily_column_1),
+                    Bytes.toBytes(record));
+            System.out.println("rowKey：" + rowKey);
+            //向“info”列簇存入安硕、元素、中诚信等数据报文
+            JSONObject jsonObject = JSON.parseObject(record);
+            String dataSourceKeyFromJsonString = jsonObject.getString(dataSourceKey);
+            if (StringUtils.isNotEmpty(dataSourceKeyFromJsonString)) {
+                put.addColumn(Bytes.toBytes(Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_2),
+                        Bytes.toBytes(columnFamily_column_2), Bytes.toBytes(jsonObject.getString(dataSourceKeyFromJsonString)));
+            }
+            //向“result”列簇存入指标计算结果数据
+            put.addColumn(Bytes.toBytes(Dfwybank_VCloude_Hbase_BusinessJustice_ColumnFamily_3),
+                    Bytes.toBytes(columnFamily_column_3),
+                    Bytes.toBytes(jsonStr));
+            //执行存入动作
+            table.put(put);
+        } catch (Exception e) {
+            HBaseUtils.close();
+            e.printStackTrace();
+            throw new ServiceException(ErrorCodeIDE.VCloudeSpark.Spark_Kafka_Producer_InsertIntoHbase_ERROR
+                    + "：插入HBase数据异常"
+                    + System.getProperty("line.separator")
+                    + e);
+        } finally {
+            HBaseUtils.close();
+        }
+    }
+}

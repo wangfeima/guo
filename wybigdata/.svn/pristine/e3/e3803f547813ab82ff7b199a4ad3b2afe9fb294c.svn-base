@@ -1,0 +1,80 @@
+package common.utils.etlclean;
+import common.utils.stringutils.StringUtils;
+
+import java.text.ParseException;
+
+/**
+ * @author: dxx
+ * @version: V-Cloude
+ * @date: 2018/12/14 15:45
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ * @file_name: wybigdata
+ * @pachage_name: common.utils.etlclean
+ * @description:原始数据向标准数据清洗规则
+ */
+public class EtlCleanRules {
+    /*
+    * @Description: 删除字符串两端空格
+    * @param: [str]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 15:54
+    */
+    public static String deleteSpace(String string) {
+        if (StringUtils.isNotEmpty(string)) {
+            return StringUtils.trim(string);
+        } else {
+            return "";
+        }
+    }
+    /*
+    * @Description: string为空，返回0.0;如果返回带%将百分制转double;如果不带%则直接转成double返回
+    * @param: [string, number]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 16:17
+    */
+    public static double DeletePercentSign(String string) throws ParseException {
+
+        if (StringUtils.isNotEmpty(string)) {
+            if (string.contains("%")) {
+                return StringUtils.stringToDouble(string);
+            } else {
+                return Double.parseDouble(string);
+            }
+        }
+        return 0.00;
+    }
+    /*
+    * @Description: 删除特殊字符
+    * @param: [string, specialCharacters]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 16:23
+    */
+    public static String DeleteSpecialCharacters(String string) {
+        return StringUtils.retainTheSpecifiedCharacter(string);
+    }
+    /*
+    * @Description: 删除数字前多余的0，比如001500变成1500
+    * @param: [string]
+    * @return: java.lang.String
+    * @author:Dxx
+    * @Date: 2018/12/14 16:20
+    */
+    public static String DeleteZero(String frontStr) {
+        if (StringUtils.isNotEmpty(frontStr)){
+            return  frontStr.replaceAll("^(0+)", "");
+        }else {
+            return "";
+        }
+    }
+
+    public static void main(String[] args) throws ParseException {
+        /*String str = "";//字符串类型的百分数
+        System.out.println(DeletePercentSign(str));*/
+        String str = "";
+        System.out.println(DeleteZero(str));
+        String a="2018/01/02 09/09/01";
+    }
+}

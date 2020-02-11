@@ -1,0 +1,673 @@
+package common.utils.exception;
+
+/**
+ * IDE错误码 12开头5位码
+ */
+public class ErrorCodeIDE {
+
+	/**
+	 * 智能决策引擎模型错误码接口
+	 */
+	public interface IdengineModel {
+		/**
+		 * 添加模型数据异常
+		 */
+		int ADD_MODEl_ERROR = 12101;
+
+		/**
+		 * 删除模型数据异常
+		 */
+		int DELETE_MODEl_ERROR = 12102;
+
+		/**
+		 * 编辑模型数据异常
+		 */
+		int EDIT_MODEl_ERROR = 12103;
+
+		/**
+		 * 查询模型数据异常
+		 */
+		int SELECT_MODEl_ERROR = 12104;
+
+		/**
+		 * 版本号和code重复
+		 */
+		int CODE_DUPLICATEKEY_EXCEPTION = 12199;
+
+	}
+
+	/**
+	 * 智能决策引擎模块错误码接口
+	 */
+	public interface IdengineModule {
+		/**
+		 * 添加模块数据异常
+		 */
+		int ADD_MODULE_ERROR = 12201;
+
+		/**
+		 * 删除模块数据异常
+		 */
+		int DELETE_MODULE_ERROR = 12202;
+
+		/**
+		 * 编辑模块数据异常
+		 */
+		int EDIT_MODULE_ERROR = 12203;
+
+		/**
+		 * 查询模块数据异常
+		 */
+		int SELECT_MODULE_ERROR = 12204;
+
+		/**
+		 * 版本号和code重复
+		 */
+		int CODE_DUPLICATEKEY_EXCEPTION = 12299;
+	}
+
+	/**
+	 * 智能决策引擎指标错误码接口
+	 */
+	public interface IdengineQuotas {
+		/**
+		 * 添加指标数据异常
+		 */
+		int ADD_QUOTAS_ERROR = 12301;
+		/**
+		 * 删除指标数据异常
+		 */
+		int DELETE_QUOTAS_ERROR = 12302;
+		/**
+		 * 编辑指标数据异常
+		 */
+		int EDIT_QUOTAS_ERROR = 12303;
+
+		/**
+		 * 查询指标数据异常
+		 */
+		int SELECT_QUOTAS_ERROR = 12304;
+		/**
+		 * 新增指标重复
+		 */
+		int ADD_QUOTAS_CHECK = 12399;
+		/**
+		 * 参数有误
+		 */
+		int PARAM_QUOTAS_ERROR = 12305;
+		/**
+		 * 执行指标sql异常
+		 */
+		int EXEC_QUOTAS_ERROR = 12306;
+
+	}
+
+	/**
+	 * 智能决策引擎规则错误码接口
+	 */
+	public interface IdengineRule {
+		/**
+		 * 添加指标数据异常
+		 */
+		int ADD_RULE_ERROR = 12401;
+
+		/**
+		 * 删除指标数据异常
+		 */
+		int DELETE_RULE_ERROR = 12402;
+
+		/**
+		 * 编辑指标数据异常
+		 */
+		int EDIT_RULE_ERROR = 12403;
+
+		/**
+		 * 查询指标数据异常
+		 */
+		int SELECT_RULE_ERROR = 12404;
+		/**
+		 * 参数有误
+		 */
+		int PARAM_RULE_ERROR = 12405;
+		/**
+		 * 添加规则数据重复
+		 */
+		int ADD_RULE_CHECK = 12499;
+
+	}
+
+	/**
+	 * 智能决策引擎产品错误码接口
+	 */
+	public interface IdengineProduct {
+		/**
+		 * 添加产品数据异常
+		 */
+		int ADD_PRODUCT_ERROR = 12501;
+
+		/**
+		 * 删除产品数据异常
+		 */
+		int DELETE_PRODUCT_ERROR = 12502;
+
+		/**
+		 * 编辑产品数据异常
+		 */
+		int EDIT_PRODUCT_ERROR = 12503;
+
+		/**
+		 * 查询产品数据异常
+		 */
+		int SELECT_PRODUCT_ERROR = 12504;
+
+		/**
+		 * 产品代码重复
+		 */
+		int CODE_DUPLICATEKEY_EXCEPTION = 12599;
+		/**
+		 * 参数有误
+		 */
+		int PARAM_PRODUCT_ERROR = 12505;
+		/**
+		 * 查询产品树异常
+		 */
+		int SELECT_PRODUCT_TREE_ERROR = 12506;
+
+	}
+
+	/**
+	 * 智能决策引擎异常规则错误码接口
+	 */
+	public interface IdengineExceptionRule {
+		/**
+		 * 添加异常规则数据异常
+		 */
+		int ADD_EXCEPTIONRULE_ERROR = 12601;
+
+		/**
+		 * 删除异常规则数据异常
+		 */
+		int DELETE_EXCEPTIONRULE_ERROR = 12602;
+
+		/**
+		 * 编辑异常规则数据异常
+		 */
+		int EDIT_EXCEPTIONRULE_ERROR = 12603;
+
+		/**
+		 * 查询异常规则数据异常
+		 */
+		int SELECT_EXCEPTIONRULE_ERROR = 12604;
+		/**
+		 * 添加异常规则数据重复
+		 */
+		int ADD_EXCEPTIONRULE_CHECK = 12699;
+	}
+
+	/**
+	 * 智能决策引擎版本错误码接口
+	 */
+	public interface IdengineVersion {
+		/**
+		 * 添加版本数据异常
+		 */
+		int ADD_VERSION_ERROR = 12601;
+
+		/**
+		 * 删除版本数据异常
+		 */
+		int DELETE_VERSION_ERROR = 12602;
+
+		/**
+		 * 编辑版本数据异常
+		 */
+		int EDIT_VERSION_ERROR = 12603;
+
+		/**
+		 * 查询版本数据异常
+		 */
+		int SELECT_VERSION_ERROR = 12604;
+		/**
+		 * 添加版本数据重复
+		 */
+		int ADD_VERSION_CHECK = 12699;
+		/**
+		 * 参数校验
+		 */
+		int PARAM_VERSION_ERROR = 12605;
+	}
+
+	/**
+	 * 智能决策引擎评级映射错误码接口
+	 */
+	public interface IdengineCustomGrade {
+		/**
+		 * 添加产品数据异常
+		 */
+		int ADD_CUSTOMGRADE_ERROR = 12701;
+
+		/**
+		 * 删除产品数据异常
+		 */
+		int DELETE_CUSTOMGRADE_ERROR = 12702;
+
+		/**
+		 * 编辑产品数据异常
+		 */
+		int EDIT_CUSTOMGRADE_ERROR = 12703;
+
+		/**
+		 * 查询产品数据异常
+		 */
+		int SELECT_CUSTOMGRADE_ERROR = 12704;
+	}
+
+	/**
+	 * 智能决策引擎综合计算错误码接口
+	 */
+	public interface IdengineComprehensive {
+		/** 模型产品计算异常 */
+		int CALCULATION_ERROR = 12801;
+
+		/** 产品代码无效 */
+		int CALCULATION_CPDM_ERROR = 12802;
+
+		/** 申请编号无效 */
+		int CALCULATION_REQID_ERROR = 12803;
+		
+		/** 产品代码, 申请id为空 */
+		int CALCULATION_CPDMSQID_ERROR = 12804;
+		
+		/**一级准入计算异常*/
+		int CALCULATION_YJZR_ERROR = 12805;
+		
+		/**二级准入计算异常*/
+		int CALCULATION_RJZR_ERROR = 12806;
+		
+		/**支用计算异常*/
+		int CALCULATION_DISBURSE_ERROR = 12807;
+		
+		/**评分模型信息获取失败*/
+		int CALCULATION_MODELPARAM_ERROR = 12808;
+		
+		/**重复计算结果*/
+		int CALCULATION_CFJSJG_ERROR = 12809;
+		
+		/**准入 反欺诈 评分模型结果不存在*/
+		int CALCULATION_ZRFQZPFMXJGBCZ_ERROR = 12810;
+		
+		/**准入 反欺诈 评分模型结果保存失败*/
+		int CALCULATION_ZRFQZPFMXBCSB_ERROR = 12811;
+		
+		/**准入模型为配置参数*/
+		int CALCULATION_ZRMXWPZCS_ERROR = 12812;
+		
+		/**反欺诈模型为配置参数*/
+		int CALCULATION_FQZMXWPZCS_ERROR = 12813;
+		
+		/**反欺诈模型评级映射为配置*/
+		int CALCULATION_FQZPJYSWPZ_ERROR = 12814;
+		
+		/**评分模型未配置模块参数*/
+		int CALCULATION_PFMXWPZMK_ERROR = 12815;
+		
+		/**评分模型评级映射为配置*/
+		int CALCULATION_PFPJYSWPZ_ERROR = 12816;
+		
+		/**反欺诈模型计算异常*/
+		int CALCULATION_FQZMXJS_ERROR = 12817;
+		
+		/**评分模型计算异常*/
+		int CALCULATION_PFMXJS_ERROR = 12818;
+		
+		/**身份交叉校验计算异常*/
+		int CALCULATION_SFJCJY_ERROR = 12819;
+		
+		/**额度定价, 利率模型计算异常*/
+		int CALCULATION_EDDJLL_ERROR = 12820;
+		
+		/**额度利率计算公式为配置*/
+		int CALCULATION_EDLLGSWPZ_ERROR = 12821;
+		
+		/**一级准入结果不存在*/
+		int CALCULATION_YJZRJGBCZ_ERROR = 12822;
+	}
+
+	/**
+	 * 智能决策引擎评级映射EXCEL相关接口
+	 */
+	public interface IdengineExcel {
+		
+		/*
+		 * 导出Excel出现异常
+		 */
+		int IDE_EXPORT_ERROR = 12951;
+
+		/*
+		 * 导入Excel出现异常
+		 */
+		int IDE_IMPORT_ERROR = 12952;
+		
+		/*
+		 * 下载Excel模板出现异常
+		 */
+		int IDE_DOWNLOAD_ERROR = 12953;
+		
+		
+		/**
+		 * 模型策略导出异常
+		 */
+		int MODEL_STRATEGY_EXPORT_ERROR = 12901;
+
+		/**
+		 * 模型策略导入异常
+		 */
+		int MODEL_STRATEGY_IMPORT_ERROR = 12902;
+		
+		/**
+		 * 模型池导出异常
+		 */
+		int QUOTAS_EXPORT_ERROR = 12903;
+
+		/**
+		 * 模型池导入异常
+		 */
+		int QUOTAS_IMPORT_ERROR = 12904;
+
+	}
+
+	/**
+	 * 产品模型策略相关接口
+	 */
+	public interface IdengineProductStrategy {
+		/**
+		 * 查询产品模型策略异常
+		 */
+		int SELECT_PRODUCT_STRATEGY_ERROR = 13001;
+
+		/**
+		 * 添加模型节点异常
+		 */
+		int ADD_MODEL_NODE_ERROR = 13002;
+
+		/**
+		 * 添加模块节点异常
+		 */
+		int ADD_MODULE_NODE_ERROR = 13003;
+
+		/**
+		 * 添加规则节点异常
+		 */
+		int ADD_RULE_NODE_ERROR = 13004;
+
+		/**
+		 * 删除节点异常
+		 */
+		int DELETE_NODE_ERROR = 13005;
+	}
+
+	/**
+	 * 智能决策引擎标签错误码接口
+	 */
+	public interface IdengineTag {
+		/**
+		 * 添加标签数据异常
+		 */
+		int ADD_TAG_ERROR = 13101;
+
+		/**
+		 * 删除标签数据异常
+		 */
+		int DELETE_TAG_ERROR = 13102;
+
+		/**
+		 * 编辑标签数据异常
+		 */
+		int EDIT_TAG_ERROR = 13103;
+
+		/**
+		 * 查询标签数据异常
+		 */
+		int SELECT_TAG_ERROR = 13104;
+
+		/**
+		 * 版本号和code重复
+		 */
+		int CODE_DUPLICATEKEY_EXCEPTION = 13199;
+
+	}
+	/**
+	 * 智能决策引擎额度利率矩阵错误码接口
+	 */
+	public interface IdengineLimitRateMatrix {
+		/**
+		 * 添加额度利率矩阵数据异常
+		 */
+		int ADD_LIMITRATEMATRIX_ERROR = 13201;
+
+		/**
+		 * 删除额度利率矩阵数据异常
+		 */
+		int DELETE_LIMITRATEMATRIX_ERROR = 13202;
+
+		/**
+		 * 编辑额度利率矩阵数据异常
+		 */
+		int EDIT_LIMITRATEMATRIX_ERROR = 13203;
+
+		/**
+		 * 查询额度利率矩阵数据异常
+		 */
+		int SELECT_LIMITRATEMATRIX_ERROR = 13204;
+		/**
+		 * 额度利率矩阵参数有误
+		 */
+		int PARAM_LIMITRATEMATRIX_ERROR = 13205;
+		/**
+		 *  额度利率矩阵code重复
+		 */
+		int CODE_DUPLICATEKEY_EXCEPTION = 13299;
+	}
+	
+	
+	/**
+	 * 智能决策引擎额度利率公式错误码接口
+	 */
+	public interface IdengineLimitFormula {
+		/**
+		 * 添加公式数据异常
+		 */
+		int ADD_FORMULA_ERROR = 13301;
+
+		/**
+		 * 删除公式数据异常
+		 */
+		int DELETE_FORMULA_ERROR = 13302;
+
+		/**
+		 * 编辑公式数据异常
+		 */
+		int EDIT_FORMULA_ERROR = 13303;
+
+		/**
+		 * 查询公式数据异常
+		 */
+		int SELECT_FORMULA_ERROR = 13304;
+
+		/**
+		 * 公式代码重复
+		 */
+		int CODE_DUPLICATEKEY_EXCEPTION = 13399;
+	}
+	
+	
+	/**
+	 * 智能决策引擎额度利率系数错误码接口
+	 */
+	public interface IdengineLimitCoefficient {
+		/**
+		 * 添加公式数据异常
+		 */
+		int ADD_COEFFICIENT_ERROR = 13401;
+
+		/**
+		 * 删除公式数据异常
+		 */
+		int DELETE_COEFFICIENT_ERROR = 13402;
+
+		/**
+		 * 编辑公式数据异常
+		 */
+		int EDIT_COEFFICIENT_ERROR = 13403;
+
+		/**
+		 * 查询公式数据异常
+		 */
+		int SELECT_COEFFICIENT_ERROR = 13404;
+
+		/**
+		 * 公式代码重复
+		 */
+		int CODE_DUPLICATEKEY_EXCEPTION = 13499;
+	}
+	
+	/**
+	 * 智能决策引擎额度利率矩阵映射错误码接口
+	 */
+	public interface IdengineLimitRateMapping {
+		/**
+		 * 添加额度利率矩阵映射数据异常
+		 */
+		int ADD_LIMITRATEMAPPING_ERROR = 13501;
+
+		/**
+		 * 删除额度利率矩阵映射数据异常
+		 */
+		int DELETE_LIMITRATEMAPPING_ERROR = 13502;
+
+		/**
+		 * 编辑额度利率矩阵映射数据异常
+		 */
+		int EDIT_LIMITRATEMAPPING_ERROR = 13503;
+
+		/**
+		 * 查询额度利率矩阵映射数据异常
+		 */
+		int SELECT_LIMITRATEMAPPING_ERROR = 13504;
+		/**
+		 * 额度利率矩阵映射参数有误
+		 */
+		int PARAM_LIMITRATEMAPPING_ERROR = 13505;
+	}
+	
+	
+	/**
+	 * 智能决策引擎规则结果查询错误码接口
+	 */
+	public interface IdengineRuleResult {
+		/**
+		 * 查询则结果信息
+		 */
+		int SELECT_RULERESULT_ERROR = 13604;
+	}
+	
+	/**
+	 * 人工干预与审核指标触发配置错误码接口
+	 */
+	public interface IdengineTriggerQuotas {
+		/**
+		 * 添加指标数据异常
+		 */
+		int ADD_TRIQUOTAS_ERROR = 13701;
+
+		/**
+		 * 删除指标数据异常
+		 */
+		int DELETE_TRIQUOTAS_ERROR = 13702;
+
+		/**
+		 * 编辑指标数据异常
+		 */
+		int EDIT_TRIQUOTAS_ERROR = 13703;
+
+		/**
+		 * 查询指标数据异常
+		 */
+		int SELECT_TRIQUOTAS_ERROR = 13704;
+		
+		/**
+		 * 参数有误
+		 */
+		int PARAM_TRIQUOTAS_ERROR = 13705;
+		
+		/**
+		 * 添加指标数据重复
+		 */
+		int ADD_TRIQUOTAS_CHECK = 13799;
+	}
+	
+	/**
+	 * 人工审核页面错误码接口
+	 */
+	public interface IdengineManualDeal {
+		
+		/**
+		 * 添加数据异常
+		 */
+		int ADD_MANUALDEAL_ERROR = 13801;
+
+		/**
+		 * 编辑数据异常
+		 */
+		int EDIT_MANUALDEAL_ERROR = 13802;
+
+		/**
+		 * 查询数据异常
+		 */
+		int SELECT_MANUALDEAL_ERROR = 13803;
+		
+		/**
+		 * 接口异常
+		 */
+		int MANUALDEAL_ERROR = 13803;
+	}
+
+	/**
+	 * VCloude bigdata
+	 */
+	public interface VCloudeSpark {
+
+		/**
+		 *向kafka发送数据异常
+		 */
+		int Spark_Kafka_Producer_Send_ERROR = 13901;
+		/**
+		 *向Hbase数据插入数据异常
+		 */
+		int Spark_Kafka_Producer_InsertIntoHbase_ERROR = 13902;
+		/**
+		 *Kafka消费异常
+		 */
+		int Kafka_Consumer_ERROR = 13903;
+		/**
+		 *Http发送数据异常
+		 */
+		int Http_SendData_ERROR = 13904;
+
+		/**
+		 *Http发送数据异常
+		 */
+		int Thread_Wait_ERROR = 13905;
+
+		/**
+		 *sql insert fail
+		 */
+		int Sql_Insert_ERROR = 13906;
+		/**
+		 *解析Json报文存入标准库
+		 */
+		int Date_Source_From = 13907;
+	}
+
+
+}

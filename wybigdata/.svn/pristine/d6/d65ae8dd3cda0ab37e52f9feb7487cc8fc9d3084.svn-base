@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://mybatis.org/dtd/mybatis-3-mapper.dtd" location="$PROJECT_DIR$/mybatis-3-mapper.dtd" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://192.168.10.5/svn/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%88%9B%E6%96%B0%E4%B8%AD%E5%BF%83/08%20%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3/46.%E5%BE%AE%E4%BA%91%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81/branches" />
+                  <option value="https://192.168.10.5/svn/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%88%9B%E6%96%B0%E4%B8%AD%E5%BF%83/08%20%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3/46.%E5%BE%AE%E4%BA%91%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://192.168.10.5/svn/%E6%8A%80%E6%9C%AF%E5%92%8C%E5%88%9B%E6%96%B0%E4%B8%AD%E5%BF%83/08%20%E9%A1%B9%E7%9B%AE%E7%9B%B8%E5%85%B3/46.%E5%BE%AE%E4%BA%91%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+</project>

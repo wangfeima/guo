@@ -1,0 +1,151 @@
+package common.pojo.etlstandardtable;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+/**
+ * @description:
+ * @author: Wfm
+ * Date: 2018/12/18 0018 14:19
+ * @copyright©: 2018东方微银科技（北京）有限公司
+ */
+public class StdLegalEnterpriseExecuted {
+
+    private String uuID;
+    private String reqID;
+    private String businessID;
+    private String serialno;
+    private String pname;
+    private String partycardnum;
+    private String casecode;
+    private String execcourtname;
+    private String execmoney;
+    private String casecreatetime;
+    private String inputtime;
+    private String updatetime;
+    private String createtime;
+
+    public String getUuID() {
+        return uuID;
+    }
+
+    public void setUuID(String uuID) {
+        this.uuID = uuID == null ? null : uuID.trim();
+    }
+
+    public String getReqID() {
+        return reqID;
+    }
+
+    public void setReqID(String reqID) {
+        this.reqID = reqID == null ? null : reqID.trim();
+    }
+
+    public String getBusinessID() {
+        return businessID;
+    }
+
+    public void setBusinessID(String businessID) {
+        this.businessID = businessID == null ? null : businessID.trim();
+    }
+
+    public String getSerialno() {
+        return serialno;
+    }
+
+    public void setSerialno(String serialno) {
+        this.serialno = serialno == null ? null : serialno.trim();
+    }
+
+    public String getPname() {
+        return pname;
+    }
+
+    public void setPname(String pname) {
+        this.pname = pname == null ? null : pname.trim();
+    }
+
+    public String getPartycardnum() {
+        return partycardnum;
+    }
+
+    public void setPartycardnum(String partycardnum) {
+        this.partycardnum = partycardnum == null ? null : partycardnum.trim();
+    }
+
+    public String getCasecode() {
+        return casecode;
+    }
+
+    public void setCasecode(String casecode) {
+        this.casecode = casecode == null ? null : casecode.trim();
+    }
+
+    public String getExeccourtname() {
+        return execcourtname;
+    }
+
+    public void setExeccourtname(String execcourtname) {
+        this.execcourtname = execcourtname == null ? null : execcourtname.trim();
+    }
+
+    public String getExecmoney() {
+        return execmoney;
+    }
+
+    public void setExecmoney(String execmoney) {
+        this.execmoney = execmoney == null ? null : execmoney.trim();
+    }
+
+    public String getCasecreatetime() {
+        return casecreatetime;
+    }
+
+    public void setCasecreatetime(String casecreatetime) {
+        this.casecreatetime = casecreatetime == null ? null : casecreatetime.trim();
+    }
+
+    public String getInputtime() {
+        return inputtime;
+    }
+
+    public void setInputtime(String inputtime) {
+        this.inputtime = inputtime == null ? null : inputtime.trim();
+    }
+
+    public String getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(String updatetime) {
+        this.updatetime = updatetime == null ? null : updatetime.trim();
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime == null ? null : createtime.trim();
+    }
+
+
+    @Override
+    public String toString() {
+        return "StdLegalEnterpriseExecuted{" +
+                "uuID='" + uuID + '\'' +
+                ", reqID='" + reqID + '\'' +
+                ", businessID='" + businessID + '\'' +
+                ", serialno='" + serialno + '\'' +
+                ", pname='" + pname + '\'' +
+                ", partycardnum='" + partycardnum + '\'' +
+                ", casecode='" + casecode + '\'' +
+                ", execcourtname='" + execcourtname + '\'' +
+                ", execmoney='" + execmoney + '\'' +
+                ", casecreatetime='" + casecreatetime + '\'' +
+                ", inputtime='" + inputtime + '\'' +
+                ", updatetime='" + updatetime + '\'' +
+                ", createtime='" + createtime + '\'' +
+                '}';
+    }
+}

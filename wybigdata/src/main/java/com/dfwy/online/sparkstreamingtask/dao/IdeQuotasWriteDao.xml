@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dfwy.online.sparkstreamingtask.dao.IdeQuotasWriteDao">
+ 	<!-- 批量插入指标真实值 -->
+	<insert id="inserQuotasDataValueList" parameterType="java.util.List">
+		insert into ide_quotas_data_value (
+		QDV_ID,REQ_ID,BUSINESSID,QUOTAS_CODE,QUOTAS_NAME,QUOTAS_VALUE,ENABLED,CREATETIME,EXCEPTION_CODE
+		)	VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+		(
+		#{item.qdvId},#{item.reqId},#{item.businessID},#{item.quotasCode},#{item.quotasName},#{item.quotasValue},'Y',
+			SYSDATE(),#{item.exceptionCode}
+		)
+		</foreach>
+		<!--select A.* from(
+		<foreach collection="list" item="item" index="index" separator=" UNION ALL ">
+			SELECT
+			#{item.qdvId,jdbcType=VARCHAR} QDV_ID,
+			#{item.reqId,jdbcType=VARCHAR} REQ_ID,
+			#{item.businessID,jdbcType=VARCHAR} BUSINESSID,
+			#{item.quotasCode,jdbcType=VARCHAR} QUOTAS_CODE,
+			#{item.quotasName,jdbcType=VARCHAR} QUOTAS_NAME,
+			#{item.quotasValue,jdbcType=VARCHAR} QUOTAS_VALUE,
+			'Y' ENABLED,
+			SYSDATE() CREATETIME,
+			#{item.exceptionCode,jdbcType=VARCHAR} EXCEPTION_CODE
+			from dual
+		</foreach>
+		) A-->
+	</insert>
+    <!-- 批量插入指标信息 -->
+  <insert id="addBatch" parameterType="java.util.List">
+    insert into ide_QUOTAS (
+       		QUOTAS_ID, 
+       		QUOTAS_CODE, 
+       		QUOTAS_NAME, 
+       		EXEC_METHOD, 
+       		EXEC_SQL, 
+       		EXEC_STAGE,
+       		EXEC_PRI,
+	  		DATA_SOURCES,
+	  		QUOTAS_TYPE,
+    		CREATOR
+      		)
+       select A.* from(
+        <foreach collection="list" item="item" index="index" separator=" UNION ALL ">
+            SELECT   
+                #{item.id,jdbcType=VARCHAR} QUOTAS_ID, 
+            	#{item.quotasCode,jdbcType=VARCHAR} QUOTAS_CODE, 
+	            #{item.quotasName,jdbcType=VARCHAR} QUOTAS_NAME, 
+	      		#{item.execMethod,jdbcType=VARCHAR} EXEC_METHOD, 
+	      		#{item.execSql,jdbcType=VARCHAR} EXEC_SQL,
+	      		#{item.execStage,jdbcType=VARCHAR} EXEC_STAGE, 
+	      		#{item.execPri,jdbcType=VARCHAR} EXEC_PRI,
+				#{item.dataSources,jdbcType=VARCHAR} DATA_SOURCES,
+				#{item.quotasType,jdbcType=VARCHAR} QUOTAS_TYPE,
+				#{item.creator,jdbcType=VARCHAR} CREATOR
+            from dual
+         </foreach>
+        ) A 
+  </insert>
+</mapper>

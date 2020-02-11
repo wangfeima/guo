@@ -1,0 +1,102 @@
+package com.dfwy.online.sparkstreamingtask.vcloude.task;
+
+import com.dfwy.online.sparkstreamingtask.business.calculation.IdeQuotasCalcuBusiService;
+import com.dfwy.online.sparkstreamingtask.dao.IdeQuotasReadDao;
+import common.pojo.quotas.QuotasDataValueEntity;
+import common.pojo.quotas.QuotasEntity;
+import common.utils.collection.CollectionUtils;
+import common.utils.stringutils.StringUtils;
+
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Vector;
+import java.util.concurrent.CountDownLatch;
+
+/**
+ * @version V2.0
+ * @description: 指标执行
+ * @author: FangRen
+ * @date: 2018年7月23日 下午2:49:40
+ * @copyright©2018东方微银网络信息（北京）有限公司
+ * @fileName:com.dfwy.task.QuotasTask.java
+ */
+public class QuotasTask implements Runnable {
+    //指标基础信息实体类
+    private QuotasEntity quotas;
+    //CountDownLatch是一个同步工具类，它允许一个或多个线程一直等待，直到其他线程的操作执行完后再执行
+    private CountDownLatch latch;
+    //指标真实值信息集合
+    private Vector<QuotasDataValueEntity> dataValueList;
+    //贷款人申请信息转的map集合
+    private Map<String, Object> map;
+    //dao接口
+    private IdeQuotasReadDao ideQuotasReadDao;
+    //指标执行方法接口
+    private IdeQuotasCalcuBusiService ideQuotasCalcuBusiService;
+    //uuid
+    private String uuid;
+
+    public QuotasTask(QuotasEntity quotas, Vector<QuotasDataValueEntity> dataValueList, Map<String, Object> map,
+                      IdeQuotasReadDao ideQuotasReadDao, CountDownLatch latch, IdeQuotasCalcuBusiService ideQuotasCalcuBusiService, String uuid) {
+        this.quotas = quotas;
+        this.dataValueList = dataValueList;
+        this.map = map;
+        this.latch = latch;
+        this.ideQuotasReadDao = ideQuotasReadDao;
+        this.ideQuotasCalcuBusiService = ideQuotasCalcuBusiService;
+        this.uuid = uuid;
+    }
+
+    @Override
+    public void run() {
+        try {
+
+            Map<String, String> quotasMap = new HashMap<>();
+
+            Map<String, Object> mapParam = new HashMap<String, Object>();
+
+            if (StringUtils.isNotEmpty(quotas.getExecMethod())) {
+                /**
+                 * 执行方法中的规则，待开发
+                 */
+                Class<?> classes = ideQuotasCalcuBusiService.getClass();
+                Method method = classes.getDeclaredMethod(quotas.getExecMethod(), Map.class);
+                quotasMap.put("QUOTASVALUE", String.valueOf(method.invoke(ideQuotasCalcuBusiService, map)));
+            } else {
+                /**
+                 *执行数据库的配置规则
+                 */
+                if (StringUtils.isNotEmpty(quotas.getExecSql())) {
+                    mapParam.putAll(map);
+
+                    mapParam.put("execSql", quotas.getExecSql());
+                    Map<String, String> execQuotas = ideQuotasReadDao.execQuotas(mapParam);
+                    if (CollectionUtils.isNotEmpty(execQuotas)) {
+                        quotasMap.putAll(execQuotas);
+                    }
+                }
+            }
+            mapParam.clear();
+            QuotasDataValueEntity dataValueEntity = new QuotasDataValueEntity();
+            if (quotasMap != null) {
+                dataValueEntity.setQuotasValue(StringUtils.objToStr(quotasMap.get("QUOTASVALUE")));
+                dataValueEntity.setExceptionCode(StringUtils.objToStr(quotasMap.get("EXCEPTIONCODE")));
+            }
+            dataValueEntity.setQdvId(uuid);
+            dataValueEntity.setQuotasCode(quotas.getQuotasCode());
+            dataValueEntity.setQuotasName(quotas.getQuotasName());
+            dataValueEntity.setReqId(map.get("reqID").toString());
+            dataValueEntity.setBusinessID(map.get("businessID").toString());
+            dataValueList.add(dataValueEntity);
+        } catch (Exception e) {
+            e.printStackTrace();
+            /*throw new ServiceException(ErrorCodeIDE.VCloudeSpark.Thread_Wait_ERROR
+                    +",QuotasTask线程类构建失败！"
+                    +System.getProperty("line.separator")
+                    ,e);*/
+        } finally {
+            latch.countDown();
+        }
+    }
+}
